@@ -1,0 +1,225 @@
+@import "variables";
+
+.sector_section {
+  display: grid;
+
+  .sector_homepage {
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .sector_newsFeed {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      border: 2px solid rgba(200, 200, 200, 0.18);
+      height: 60vh;
+
+      hr {
+        width: 100%;
+        border: 0;
+        height: 2px;
+        background: #ccc;
+      }
+
+      .newsFeed_heading {
+        border-bottom: 1px solid #ededed;
+        position: sticky;
+
+        h3 {
+          margin: 0.8rem auto;
+          text-align: center;
+          font-weight: 500;
+          font-size: 2.2rem;
+        }
+      }
+
+      .newsFeed_description {
+        overflow-y: scroll;
+        p {
+          font-size: 1.5rem;
+          letter-spacing: 0.3px;
+          padding: 0 2rem;
+        }
+      }
+    }
+
+    .sector_gallery {
+      width:70%;
+
+      .sector_image {
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: 60vh;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .sector_description {
+    @include headingStyle($primaryColor);
+    background-color: $secondaryColor;
+    padding-bottom: 7rem;
+
+    .sector_para {
+      font-size: 1.8rem;
+      width: 85%;
+      letter-spacing: 1px;
+      line-height: 3rem;
+      font-weight: 400;
+      opacity: 0.8;
+      margin: 0 auto;
+      text-align: justify;
+    }
+  }
+
+  .sector_head_section {
+    @include headingStyle($secondaryColor);
+    width: 100%;
+    background-color: $primaryColor;
+    margin: 0 auto;
+    text-align: center;
+
+    .sector_head_container {
+      margin: 5rem auto;
+      padding-top: 5rem;
+      width: 60%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-column-gap: 16px;
+      grid-row-gap: 30px;
+
+      .head_box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $secondaryColor;
+
+        .head_image {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+
+          img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+          }
+        }
+
+        .sector_post_holder {
+          padding: 2rem 0;
+
+          p {
+            line-height: 2.7rem;
+            margin-bottom: 0;
+
+            &:first-child {
+              font-weight: 300;
+              font-size: 1.8rem;
+            }
+            &:last-child {
+              font-weight: 500;
+              font-size: 1.5rem;
+              letter-spacing: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sector_members_section {
+    @include headingStyle($primaryColor);
+
+    .members_name_container {
+      display: grid;
+      width: 95%;
+      margin: 7rem auto;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+
+      .sector_member {
+        border: 3px solid #eeeeee;
+        font-size: 2.2rem;
+        text-align: center;
+        padding: 1rem 2rem;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .sector_section {
+    width: 100%;
+
+    .sector_homepage {
+      width: 100%;
+      flex-direction: column;
+
+
+      .sector_newsFeed {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 1rem;
+        
+        .newsFeed_heading {
+          font-size: 1.7rem;
+        }
+        
+        .newsFeed_description {
+          font-size: 1.3rem;
+        }
+      }
+      
+      .sector_gallery {
+        width: 100%;
+        .sector_image {
+          width: 100%;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    .sector_description {
+      .sector_para {
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+      }
+    }
+
+    .sector_head_section {
+      .head_image {
+        width: 90px;
+        height: 90px;
+
+        img {
+          width: 90px;
+          height: 90px;
+        }
+      }
+    }
+
+    .sector_members_section {
+      .members_name_container {
+        margin: 5rem auto;
+        grid-template-columns: repeat(2, 1fr);
+
+        .sector_member {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+@import "variables";
+
+.workplaces_section {
+  background-color: $primaryColor;
+  @include grid;
+  // margin: 0 auto;
+  @include headingStyle($secondaryColor);
+  width: 100%;
+
+  .workplaces {
+    @include grid;
+    overflow: hidden;
+    padding: 0 5rem;
+    margin-bottom: 5rem;
+    gap: 3rem;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+
+    a {
+      color: $primaryColor;
+      .sector_card {
+        overflow: hidden;
+        background-color: $secondaryColor;
+        @include flex(column, flex-start);
+        width: 100%;
+        position: relative;
+        border: 0.2px solid $primaryColor;
+        padding-top: 2rem;
+        cursor: pointer;
+        border-radius: 7px;
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        z-index: 1;
+  
+        &:hover {
+  
+          .sub_heading {
+            color: $secondaryColor;
+          }
+  
+          .sector_button {
+            background-color: $secondaryColor;
+            color: $primaryColor;
+            margin-bottom: 1rem;
+          }
+  
+          .content {
+            .description {
+              color: $secondaryColor;
+              font-weight: 300;
+              opacity: 0.9;
+            }
+          }
+        }
+  
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 5px;
+          // border-bottom-left-radius: 7px;
+          // border-bottom-right-radius: 7px;
+          background: linear-gradient(-45deg, $primaryColor 0%, $primaryColor);
+          z-index: -1;
+          transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+  
+        &:hover::before {
+          // border-radius: 7px;
+          color: $secondaryColor;
+          height: 100%;
+        }
+  
+        .sub_heading {
+          margin-bottom: 1rem;
+          letter-spacing: 1px;
+        }
+  
+        .content {
+          @include flex(column, center);
+          color: $tertiaryColor;
+          padding: 0 2.3rem;
+          transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  
+          .description {
+            font-size: 1.4rem;
+            letter-spacing: 0.2px;
+            text-align: left;
+            // below codes: used for fixing the words in the card ....
+            @include truncate-lines(9);
+          }
+        }
+  
+        .sector_button {
+          margin-top: 1rem;
+          color: $secondaryColor;
+          font-size: 1.5rem;
+          border: none;
+          padding: 0.6rem 2rem;
+          background: $primaryColor;
+          border-radius: 5px;
+          transition: margin 0.3s ease-in;
+  
+          &:hover {
+            background: none;
+            border: 0.5px solid $secondaryColor;
+            transition: all 0.3s ease-out;
+            color: $secondaryColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .workplaces_section {
+    .workplaces {
+      width: 90%;
+      grid-template-columns: auto;
+
+      a {
+        .sector_card {
+          margin: 1rem auto;
+  
+          .content {
+            .description {
+              font-weight: 400;
+              font-size: 1.8rem;
+              letter-spacing: 1px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+  .workplaces_section {
+    .workplaces {
+      width: 100%;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-evenly;
+      gap: 4rem;
+    }
+
+    @media screen and (min-width: 992px) and (max-width: 1200px) {
+      .workplaces_section {
+        .workplaces {
+          width: 100%;
+          grid-template-columns: repeat(3, 1fr);
+          justify-content: space-evenly;
+          gap: 4rem;
+        }
+      }
+    }
+  }
+}

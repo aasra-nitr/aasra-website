@@ -1,0 +1,24 @@
+.gallery_image {
+  height: 85vh;
+  width: 100%;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery_image {
+    width: 100%;
+    height: 70vh;
+
+    img {
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+    }
+  }
+}
+// @media screen and (min-width: 769px) and (max-width: 1200px) {
+// }

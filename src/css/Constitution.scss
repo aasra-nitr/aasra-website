@@ -1,0 +1,7 @@
+
+
+@import "variables"; 
+
+.constitution  {
+    @include headingStyle($primaryColor);
+}

@@ -1,0 +1,32 @@
+@import "variables";
+
+.form-section {
+    width:  100%;
+    height: 100vh;
+    background-color: $greyColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.formPart {
+    display: flex;
+    flex-direction: column;
+}
+.formPartSection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+button {
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px 20px;
+}

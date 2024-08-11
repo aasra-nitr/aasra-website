@@ -1,0 +1,50 @@
+$primaryColor: #373b44;
+$secondaryColor: #fffef1;
+$tertiaryColor: #3e3e3e;
+$greyColor : #ccc;
+$dangerColor: #e74c3c;
+
+
+@mixin headingStyle($color) {
+    h1 {
+        position: relative;
+        color: $color;
+        font-size: 3.5rem;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin: 5rem 0;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            width: 10vw;
+            bottom: -35%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom: 3px solid $color;
+        }
+    }
+}
+
+@mixin grid{
+    display: grid;
+    place-items: center;
+}
+
+@mixin flex($direc,$justCont) {
+    display: flex;
+    flex-direction: $direc;
+    align-items: center;
+    justify-content: $justCont;
+    
+}
+
+@mixin truncate-lines($lineCount) {
+    display: -webkit-box;
+    -webkit-line-clamp: $lineCount;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

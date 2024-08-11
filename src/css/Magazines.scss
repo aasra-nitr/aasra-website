@@ -1,0 +1,5 @@
+@import "variables"; 
+
+.magazines {
+    @include headingStyle($primaryColor);
+}

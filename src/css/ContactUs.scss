@@ -1,0 +1,104 @@
+@import "variables";
+
+.contact {
+  @include headingStyle($secondaryColor);
+  background-color: $primaryColor;
+  height: 100%;
+
+  .contact_section {
+    @include grid;
+
+    .contact_content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 5rem;
+      width: 70%;
+
+      .form_section {
+        width: 100%;
+
+        .form-group {
+          margin-right: 1.5rem;
+
+          &:not(:last-child) {
+            margin-right: 1.5rem;
+            margin-bottom: 1.5rem;
+          }
+
+          input,
+          textarea {
+            background-color: $secondaryColor;
+            padding: 1rem;
+            border: none;
+            height: auto;
+
+            &::placeholder {
+              font-size: 1.2rem;
+              color: $tertiaryColor;
+              opacity: 0.9;
+              font-weight: 400;
+            }
+          }
+
+          textarea {
+            height: 110px;
+          }
+
+          input.form-control:focus {
+            border-color: $primaryColor;
+            box-shadow: none;
+          }
+
+          .form_button {
+            width: 100%;
+            color: $primaryColor;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background-color: $secondaryColor;
+            border: 1px solid $secondaryColor;
+            border-radius: 5px;
+            padding: 0.8rem;
+
+            &:hover {
+              color: $secondaryColor;
+              background-color: $primaryColor;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.text-danger {
+  color: var(--danger-color);
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    .contact_section {
+      .contact_content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 1.5rem;
+        margin-bottom: 5rem;
+        width: 90%;
+
+        .form_section {
+          .form-group {
+            margin-right: 0;
+
+            &:not(:last-child) {
+              margin-right: 0;
+            }
+
+            textarea.form-control {
+              height: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "variables";
+
+.testimonial_section {
+  width: 100%;
+  @include grid;
+  @include headingStyle($primaryColor);
+  background-color: $secondaryColor;
+
+  .testimonial_content {
+    margin: 0 3rem 5rem 3rem;
+
+    .testimonial_box {
+      @include flex(column, center);
+      // border: 1px solid $primaryColor;
+      padding-bottom: 2rem;
+      .image_circle {
+        display: grid;
+        place-items: center;
+        border: 4px solid $secondaryColor;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .testimonial_title {
+        font-size: 2.4rem;
+        padding-top: 1.3rem;
+        font-weight: 500;
+      }
+
+      .testimonial_para {
+        padding: 1rem 3rem;
+        font-size: 1.4rem;
+        letter-spacing: 0.3px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .testimonial_section {
+    .testimonial_content {
+      .testimonial_box {
+        .testimonial_title {
+          font-size: 2rem;
+        }
+
+        .testimonial_para {
+          padding: 0.8rem 1.5rem;
+          text-align: justify;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}

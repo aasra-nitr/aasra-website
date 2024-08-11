@@ -1,0 +1,254 @@
+@import "variables";
+
+.about {
+  width: 100%;
+  background-color: $primaryColor;
+
+  .about_section {
+    margin: 0 auto;
+    width: 95%;
+    @include headingStyle($secondaryColor);
+  }
+}
+
+
+
+
+
+.timeline_section {
+  @include grid;
+  margin: 8rem 4rem;
+}
+
+.timeline {
+  margin: 1rem auto;
+  position: relative;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  top: 2.2rem;
+  bottom: 0;
+  left: 4rem;
+  width: 2px;
+  margin-left: -1.5px;
+  background-color: $secondaryColor;
+}
+
+.timeline > li {
+  position: relative;
+  margin-bottom: 5rem;
+  min-height: 5rem;
+}
+
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+
+.timeline > li:after {
+  clear: both;
+}
+
+.timeline > li .timeline-panel {
+  /* border: 2px solid red; */
+  padding-left: 12rem;
+  float: right;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.timeline > li .timeline-panel:before {
+  right: auto;
+  left: -1.5rem;
+  border-right-width: 1.5rem;
+  border-left-width: 0;
+}
+
+.timeline > li .timeline-panel:after {
+  right: auto;
+  left: -14px;
+  border-right-width: 14px;
+  border-left-width: 0;
+}
+
+.timeline > li .timeline-circle {
+  z-index: 100;
+  position: absolute;
+  left: -6px;
+  width: 100px;
+  height: 100px;
+  margin-left: 0;
+  margin-top: 2rem;
+  border: 5px solid $secondaryColor;
+  border-radius: 100%;
+  text-align: center;
+  color: $secondaryColor;
+  background-color: $tertiaryColor;
+}
+
+.timeline-body{
+  padding-top: 0.3rem;
+  /* border: 2px solid yellow; */
+  color: $greyColor;
+  font-size: 1.5rem;
+  opacity: 0.9;
+}
+
+.timeline_circle_para {
+  letter-spacing: 0;
+  margin: 2.2rem 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
+  padding-left:135px;
+  text-align: left;
+  /* margin-left: 1rem; */
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:before {
+  right: auto;
+  left: -15px;
+  border-right-width: 15px;
+  border-left-width: 0;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:after {
+  right: auto;
+  left: -14px;
+  border-right-width: 14px;
+  border-left-width: 0;
+}
+
+.timeline > li:last-child {
+  margin-bottom: 0;
+}
+
+.timeline .timeline-heading h4 {
+  font-size: 2.2rem;
+  margin-top: 0;
+  letter-spacing: 2px;
+  color: $secondaryColor;
+}
+
+.timeline .timeline-heading h4.sub_heading {
+  text-transform: none;
+  color: $secondaryColor;
+}
+
+.timeline .timeline-body > p,
+.timeline .timeline-body > ul {
+  margin-bottom: 0;
+}
+
+/* ////////______ MEDIA QUERRIES FOR MOBILE VERSION __________///// */
+
+@media (min-width: 768px) {
+  .timeline:before {
+    left: 51%;
+  }
+
+  .timeline > li {
+    margin-bottom: 100px;
+    min-height: 100px;
+  }
+
+  .timeline > li .timeline-panel {
+    float: left;
+    width: 41%;
+    padding: 0 20px 20px 30px;
+    text-align: right;
+  }
+
+  .timeline > li .timeline-circle {
+    left: 51%;
+    margin: 2.3rem;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+  }
+
+  .timeline > li .timeline-circle:last-child {
+    margin-top: 2rem;
+  }
+
+  .timeline_circle_para {
+    margin: 2.5rem 1rem;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .timeline > li .timeline-circle {
+    margin-top: 2rem;
+  }
+
+  .timeline > li.timeline-inverted > .timeline-panel {
+    float: right;
+    padding: 1.5rem 2.5rem;
+    text-align: left;
+  }
+}
+
+/* ////////______ MEDIA QUERRIES FOR TABLET VERSION __________///// */
+
+@media (min-width: 992px) {
+  .timeline > li {
+    min-height: 100px;
+  }
+
+  .timeline > li .timeline-panel {
+    padding: 0 20px 20px;
+  }
+
+  .timeline > li .timeline-circle {
+    width: 100px;
+    height: 100px;
+    margin-top: 1rem;
+    margin-left: -50px;
+  }
+  .timeline > li .timeline-circle:last-child {
+    margin-top: 1rem;
+  }
+
+  .timeline_circle_para {
+    margin: 2.5rem 0.8rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .timeline > li.timeline-inverted > .timeline-panel {
+    padding: 0 20px 20px;
+  }
+}
+
+/* ////////______ MEDIA QUERRIES FOR LAPTOP VERSION __________///// */
+
+@media (min-width: 1200px) {
+  .timeline > li {
+    min-height: 100px;
+  }
+
+  .timeline > li .timeline-panel {
+    padding: 0 20px 20px 100px;
+  }
+
+  .timeline > li .timeline-circle {
+    margin-top: 0.5rem;
+  }
+
+  .timeline_circle_para {
+    font-size: 1.4rem;
+  }
+
+  .timeline > li.timeline-inverted > .timeline-panel {
+    padding: 0 100px 20px 20px;
+  }
+}

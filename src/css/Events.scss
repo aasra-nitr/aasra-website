@@ -1,0 +1,71 @@
+@import "variables";
+
+.events_section {
+    @include headingStyle($primaryColor);
+    @include grid;
+    background-color: $secondaryColor;
+
+    .events_content {
+        @include grid;
+        width: 80%;
+        gap: 5rem;
+        justify-content: space-evenly;
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 5rem;
+
+        .event_box {
+            @include grid;
+            width: 400px;
+            height: 400px;
+
+            .event_title {
+                margin-top: 2rem;
+                border: 3px double rgb(249, 244, 172);
+                font-size: 2rem;
+                color: var(--primary-color);
+                padding: 0.5rem 1.5rem;
+            }
+
+            .event_image {
+                position: relative;
+                border-radius: 1rem;
+                width: 350px;
+                height: 330px;
+                overflow: hidden;
+                transition: transform 0.25s ease-in-out;
+
+                img {
+                    border-radius: 1rem;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .events_section {
+        .events_content {
+            width: 100%;
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+    .events_section {
+        .events_content {
+            width: 95%;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 3rem;
+            row-gap: 5rem;
+        }
+    }
+}

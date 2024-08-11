@@ -105,7 +105,7 @@ function Sector02() {
             <div className="sector_members_section">
               <h1 className="heading">Sector-02 Member's Name</h1>
               <div className="members_name_container">
-                <span className="sector_member">SMRUTI RANJAN DAS</span>
+                <span className="sector_member">Smruti Ranjan Das</span>
                 <span className="sector_member">member name</span>
                 <span className="sector_member">member name</span>
                 <span className="sector_member">member name</span>

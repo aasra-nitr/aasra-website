@@ -75,29 +75,29 @@ function Sector21() {
               <div className="sector_head_container">
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/Sector21Vc-archita.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Surya</p>
+                    <p>Archita</p>
                     <p>Vice-Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/Sector21Cap-Hari.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Dev</p>
+                    <p>Hari</p>
                     <p>Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/Sector21Vc-Sruti.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Ayushi</p>
-                    <p>Content Head</p>
+                    <p>Srutisudha</p>
+                    <p>Vice-Captain</p>
                   </div>
                 </div>
               </div>

@@ -75,29 +75,29 @@ function Sector02() {
               <div className="sector_head_container">
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/Sector2VC-Trishna.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Kunal</p>
+                    <p>Trishna</p>
                     <p>Vice-Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/Sector2Cap-Shameem.jpeg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Anuj</p>
+                    <p>Shameem</p>
                     <p>Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/Sector2VC - Birkishor Sahu.jpeg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Abhay Kumar</p>
-                    <p>Treasurer</p>
+                    <p>Birkishor</p>
+                    <p>Vice-Captain</p>
                   </div>
                 </div>
               </div>

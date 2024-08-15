@@ -10,28 +10,28 @@ function Executive() {
           <div className="executive_head_container">
             <div className="head_box">
               <div className="head_image">
-                <img src="../images/avatar.jpg" alt="head Image1" />
+                <img src="../images/ShaktiVP2.jpg" alt="head Image1" />
               </div>
               <div className="executive_post_holder">
-                <p>Swastik Kumar Sahu</p>
+                <p>Shakti Prasad Barik</p>
                 <p>Vice-President</p>
               </div>
             </div>
             <div className="head_box">
               <div className="head_image">
-                <img src="../images/avatar.jpg" alt="head Image1" />
+                <img src="../images/President Jajneswar Biswal2.jpeg" alt="head Image1" />
               </div>
               <div className="executive_post_holder">
-                <p>Satwik Srimansu Sahoo</p>
+                <p>Jajneswar Biswal</p>
                 <p>President</p>
               </div>
             </div>
             <div className="head_box">
               <div className="head_image">
-                <img src="../images/avatar.jpg" alt="head Image1" />
+                <img src="../images/Treasurer - Bhaskar Singh.jpg" alt="head Image1" />
               </div>
               <div className="executive_post_holder">
-                <p>Abhay Kumar</p>
+                <p>Bhaskar Singh</p>
                 <p>Treasurer</p>
               </div>
             </div>

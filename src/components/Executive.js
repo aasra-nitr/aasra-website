@@ -97,37 +97,6 @@ function Executive() {
               <div className="executive_head_container">
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/ShaktiVP2.jpg" alt="head Image1" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Shakti Prasad Barik</p>
-                    <p>Vice-President</p>
-                  </div>
-                </div>
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/President Jajneswar Biswal2.jpeg" alt="head Image2" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Jajneswar Biswal</p>
-                    <p>President</p>
-                  </div>
-                </div>
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/Treasurer - Bhaskar Singh.jpg" alt="head Image3" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Bhaskar Singh</p>
-                    <p>Treasurer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="executive_head_container">
-                <div className="head_box">
-                  <div className="head_image">
                     <img src="../images/facad1.jpg" alt="head Image4" />
                   </div>
                   <div className="executive_post_holder">
@@ -151,6 +120,37 @@ function Executive() {
                   <div className="executive_post_holder">
                     <p>Dr. P. Balasubramanian</p>
                     <p>Faculty Advisor</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <div className="executive_head_container">
+                <div className="head_box">
+                  <div className="head_image">
+                    <img src="../images/ShaktiVP2.jpg" alt="head Image1" />
+                  </div>
+                  <div className="executive_post_holder">
+                    <p>Shakti Prasad Barik</p>
+                    <p>Vice-President</p>
+                  </div>
+                </div>
+                <div className="head_box">
+                  <div className="head_image">
+                    <img src="../images/President Jajneswar Biswal2.jpeg" alt="head Image2" />
+                  </div>
+                  <div className="executive_post_holder">
+                    <p>Jajneswar Biswal</p>
+                    <p>President</p>
+                  </div>
+                </div>
+                <div className="head_box">
+                  <div className="head_image">
+                    <img src="../images/Treasurer - Bhaskar Singh.jpg" alt="head Image3" />
+                  </div>
+                  <div className="executive_post_holder">
+                    <p>Bhaskar Singh</p>
+                    <p>Treasurer</p>
                   </div>
                 </div>
               </div>

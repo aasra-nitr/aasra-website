@@ -75,29 +75,29 @@ function Khalsa() {
               <div className="sector_head_container">
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/KhalsaVCBibek.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Sandeep Parida</p>
-                    <p>Captain</p>
-                  </div>
-                </div>
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
-                  </div>
-                  <div className="sector_post_holder">
-                    <p>Rishabh</p>
+                    <p>Bibek</p>
                     <p>Vice-Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/KhalsaCap-Deba.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Bhaswoti Sahoo</p>
-                    <p>Design Head</p>
+                    <p>Debaprasad</p>
+                    <p>Captain</p>
+                  </div>
+                </div>
+                <div className="head_box">
+                  <div className="head_image">
+                    <img src="../images/KhalsaVCJagyasai.jpg" alt="head Image1" />
+                  </div>
+                  <div className="sector_post_holder">
+                    <p>Jagyasai</p>
+                    <p>Vice-Captain</p>
                   </div>
                 </div>
               </div>

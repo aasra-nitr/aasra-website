@@ -75,29 +75,29 @@ function Osap() {
               <div className="sector_head_container">
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/OsapVcPratyasha.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Priya</p>
+                    <p>Pratyasha</p>
                     <p>Vice-Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/OsapCapShubham.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Diwakar</p>
+                    <p>Shubham</p>
                     <p>Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/OsapVcSushmita.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Swastik Kumar Sahu</p>
-                    <p>Vice-President</p>
+                    <p>Sushmita</p>
+                    <p>Vice-Captain</p>
                   </div>
                 </div>
               </div>

@@ -73,31 +73,31 @@ function Chhend() {
             <div className="sector_head_section">
               <h1 className="heading">Chhend Post Holder</h1>
               <div className="sector_head_container">
-              <div className="head_box">
+                <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/ChhendVC-Aman.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Vinamrata</p>
+                    <p>Aman</p>
                     <p>Vice-Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/ChhendCap-Priyanka.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Debasish</p>
+                    <p>Priyanka</p>
                     <p>Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/avatar.jpg" alt="head Image1" />
+                    <img src="../images/ChhendVC-Himanshu.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Amiyendra Senapati</p>
-                    <p>External General Secretary</p>
+                    <p>Himanshu</p>
+                    <p>Vice-Captain</p>
                   </div>
                 </div>
               </div>

@@ -18,7 +18,7 @@ function Events() {
           </div>
           <div className="event_box">
             <div className="event_image">
-              <img src="../images/diya_project.jpg" alt="Diya Project"></img>
+              <img src="../images/DIYA_PROJECT2K24.webp" alt="Diya Project"></img>
             </div>
             <h3 className="event_title">Diya Project</h3>
           </div>

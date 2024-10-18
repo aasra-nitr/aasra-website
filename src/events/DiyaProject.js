@@ -365,7 +365,7 @@ function DiyaProject() {
         </div>
         <div class="order-button-container">
           <a href="https://drive.google.com/file/d/1C-0OnPMAJ412VdT2vxYoE6bjkXW0jEkL/view?usp=sharing" class="order-button">BROCHURE</a>
-          <a href="https://forms.gle/bq9U7haAsdYcpNZH8" class="order-button">ORDER NOW</a>
+          <a href="https://forms.gle/XaeF2oYTxXadFf1m8" class="order-button">ORDER NOW</a>
         </div>
       </div>
 

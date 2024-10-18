@@ -1,5 +1,6 @@
 @import "variables";
 
+
 .events_section {
     @include headingStyle($primaryColor);
     @include grid;

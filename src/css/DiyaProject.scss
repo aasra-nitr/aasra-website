@@ -1,0 +1,478 @@
+@import "variables";
+// @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+// @import url("https://fonts.googleapis.com");
+// @import url("https://fonts.gstatic.com");
+// @import url("https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap");
+// @import url("https://getbootstrap.com/docs/5.3/examples/blog/");
+// @import url("https://getbootstrap.com/docs/5.3/assets/js/color-modes.js");
+// @import url("https://cdn.jsdelivr.net/npm/@docsearch/css@3");
+//@import url("https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap");
+//@import url("https://getbootstrap.com/docs/5.3/examples/blog/blog.css");
+
+// DiyaProject.scss
+.DiyaCarouselContainer {
+  .carousel-item {
+    height: 75rem;
+  }
+
+  .carousel .display-4 {
+    font-size: 5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-style: italic;
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+      font-weight: 400;
+    }
+  }
+
+  .carousel .lead {
+    font-size: 1.75rem;
+    font-weight: 100;
+  }
+
+  .text-body-emphasis {
+    --bs-text-opacity: 1;
+    color: var(--bs-emphasis-color) !important;
+  }
+
+  /* Light mode styles */
+  .light-mode .nav-link,
+  .light-mode .btn {
+    color: #343a40;
+    /* Dark color */
+  }
+
+  .light-mode .btn {
+    --bs-btn-border-color: #343a40;
+    /* Dark color for the outline */
+  }
+
+  .light-mode .btn-primary {
+    color: white;
+  }
+
+  /* Custom CSS to change background color and text color for the second button */
+  .light-mode .btn-primary:nth-child(2) {
+    --bs-btn-bg: #343a40;
+    /* Dark color for the background */
+    --bs-btn-color: #fff;
+    /* White color for the text */
+    --bs-btn-border-color: #343a40;
+    /* Dark color for the outline */
+  }
+
+  /* Additional CSS to change focus outline color for btn-primary */
+  .light-mode .btn-primary:not(:disabled):not(.disabled):active:focus,
+  .light-mode .btn-primary:not(:disabled):not(.disabled).active:focus,
+  .light-mode .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+    /* Darker outline color for focus */
+  }
+
+  .featured-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--bs-border-radius) !important;
+  }
+
+  .carousel-indicators button {
+    background-color: #6c757d;
+    /* Gray color suitable for both light and night modes */
+  }
+
+  .carousel-inner {
+    .carousel-item {
+
+      // .specialClass {
+      .p-4 {
+        // Ensure the text stays aligned to the left
+        text-align: left;
+        padding-left: 0; // Remove any unnecessary padding on the left side
+
+        // Add padding to make sure it's not too close to the edge
+        padding-right: 50px;
+
+        @media (max-width: 768px) {
+          padding-left: 15px; // Responsive design for smaller screens
+          padding-right: 15px;
+
+        }
+      }
+
+      // Additional optional adjustments to handle text placement more precisely
+      h1 {
+        text-align: left;
+        padding: 1.5rem;
+      }
+
+      p {
+        text-align: left;
+        padding: 1.5rem;
+        letter-spacing: 1px;
+        word-spacing: 3px;
+        line-height: 1.8;
+      }
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  .carousel-item {
+    padding: 3rem; // Adjust padding
+    // margin-bottom: 3rem; // Add spacing between carousel items
+
+    .col-lg-7 {
+      padding: 2rem; // Adjust padding inside columns
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+  }
+
+
+  /* Position controls outside the carousel */
+  .carousel-control-prev,
+  .carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    /* Increase size */
+    height: 50px;
+    /* Increase size */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Semi-transparent background */
+    border-radius: 50%;
+    /* Circular shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .carousel-control-prev {
+    left: -60px;
+    /* Move outside on the left */
+  }
+
+  .carousel-control-next {
+    right: -60px;
+    /* Move outside on the right */
+  }
+
+  /* Customize the icons */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+    background-size: 100%, 100%;
+    background-color: transparent;
+    filter: brightness(0) invert(1);
+    /* White color for the arrow */
+  }
+
+  /* Add hover effect */
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.DiyaProjectContent {
+  .specialClass {
+    font-size: 1.2rem;
+    /* Adjust this size as needed */
+  }
+
+  h2 {
+    font-size: 4.5rem;
+    /* Make headings larger */
+  }
+
+  p {
+    font-size: 2.1rem;
+    /* Make paragraph text larger */
+  }
+
+  // .DiyaContentImageClass {
+  //   position: relative;
+  //   width: 100%; /* Adjust width as needed */
+  //   padding-top: 100%; /* 4:3 aspect ratio (adjust as per your requirement) */
+  //   overflow: hidden;
+  // }
+  
+  // .DiyaContentImage {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover; /* Ensures the image covers the container without distortion */
+  //   border-radius: 10px; /* Keep the rounded corners */
+  // }
+  
+
+
+}
+
+.container {
+  .contentContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4rem;
+  }
+
+  .carousel-item {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  /* Change hover color for bg-white */
+  .carousel-indicators [data-bs-target]:hover {
+    background-color: #ccc;
+    /* Light grey on hover */
+  }
+
+  /* Style for the indicators when the background is secondary */
+  .bg-secondary .carousel-indicators [data-bs-target] {
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Semi-transparent white for inactive indicators on bg-secondary */
+  }
+
+  .bg-secondary .carousel-indicators .active {
+    background-color: white;
+    /* white for the active indicator */
+  }
+
+  .bg-secondary .carousel-indicators [data-bs-target]:hover {
+    background-color: rgba(255, 255, 255, 2);
+  }
+
+  .carousel-indicators button {
+    background-color: black
+      /* Change color as needed */
+  }
+}
+
+
+/* Gallery Section */
+.gallery-section {
+  text-align: center;
+  padding: 40px;
+  background-color: #6c757d;
+  color: white;
+
+  /* Heading with Larger Size and Stylish Font */
+  .gallery-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5em;
+    /* Increased size */
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    color: white;
+    padding-bottom: 20px;
+    font-weight: bold;
+    /* Make the font bold */
+  }
+
+  .diya-brochure {
+    color: black;
+  }
+
+  .gallery-heading::before {
+    left: -70px;
+  }
+
+  .gallery-heading::after {
+    right: -70px;
+  }
+
+  .text-center {
+    margin-bottom: 20px;
+    /* Adjust spacing as needed */
+  }
+
+  .line {
+    display: inline-block;
+    width: 100px;
+    /* Adjust width of the lines */
+    height: 2px;
+    /* Thickness of the line */
+    background-color: white;
+    /* Color of the line */
+    margin: 0 10px;
+    /* Spacing between the line and the heading */
+    vertical-align: middle;
+    /* Align the line with the heading text */
+  }
+
+  .line2 {
+    display: inline-block;
+    width: 100px;
+    /* Adjust width of the lines */
+    height: 2px;
+    /* Thickness of the line */
+    background-color: black;
+    /* Color of the line */
+    margin: 0 10px;
+    /* Spacing between the line and the heading */
+    vertical-align: middle;
+    /* Align the line with the heading text */
+  }
+
+
+  /* Grid Structure */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    justify-items: center;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+      /* Show 2 items per row for tablets */
+    }
+
+    .gallery-heading {
+      font-size: 3em;
+    }
+
+    .line {
+      width: 70px;
+    }
+
+    .line2 {
+      width: 70px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      /* Show 1 item per row for mobile phones */
+    }
+
+    .gallery-heading {
+      font-size: 2em;
+    }
+
+    .line {
+      width: 50px;
+    }
+
+    .line2 {
+      width: 50px;
+    }
+  }
+
+  /* Individual Gallery Item */
+  .gallery-item {
+    position: relative;
+    width: 100%;
+    padding-top: 85%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+  }
+
+  /* Image Styling and Hover Effect */
+  .gallery-img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+  }
+
+  /* Year Label Attached to Bottom of Image with Larger Size */
+  .year-label {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    /* Larger year button */
+    font-size: 2rem;
+    /* Larger font size for the year label */
+    font-family: 'Arial', sans-serif;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Year Label Hover Effect (on label only) */
+  .year-label:hover {
+    background-color: #f39c12;
+    color: black;
+  }
+
+  .order-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .order-button-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    // .order-button {
+    //   width: 100%; /* Make the buttons full width on mobile */
+    //   margin-bottom: 10px;
+    // }
+  }
+
+  .order-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #ffc107;
+    color: white;
+    text-align: center;
+    font-family: inherit, sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    // padding: 1rem;
+    margin-top: 3rem;
+    transition: color 0.3s, background-color 0.3s;
+    color: #fffef1;
+    font-weight: 400;
+  }
+
+  .order-button:hover {
+    background-color: #e0a800;
+    color: white;
+  }
+}
+
+
+.bg-customYellowishWhite {
+  background-color: #fffef1;
+}

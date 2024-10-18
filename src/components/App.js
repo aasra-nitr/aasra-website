@@ -17,6 +17,7 @@ import Sector06 from "../workplaces/Sector06";
 import Jagda from "../workplaces/Jagda";
 import Chhend from "../workplaces/Chhend";
 import Executive from "./Executive";
+import DiyaProject from "../events/DiyaProject";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Route path="/executive" element={<Executive />}></Route>
               <Route path="/contact" element={<ContactUs />}></Route>
               <Route path="/constitution" element={<Constitution />}></Route>
+              <Route path="/events/DiyaProject" element={<DiyaProject />}></Route>
             </Route>
           </Routes>
         </BrowserRouter>

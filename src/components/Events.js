@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Events.scss";
+import { Link } from "react-router-dom";
 
 function Events() {
   return (
@@ -16,12 +17,14 @@ function Events() {
             </div>
             <h3 className="event_title">Foundation Day</h3>
           </div>
-          <div className="event_box">
-            <div className="event_image">
-              <img src="../images/DIYA_PROJECT2K24.webp" alt="Diya Project"></img>
+          <Link to={`/events/DiyaProject`}>
+            <div className="event_box">
+              <div className="event_image">
+                <img src="../images/DIYA_PROJECT2K24.webp" alt="Diya Project"></img>
+              </div>
+              <h3 className="event_title">Diya Project</h3>
             </div>
-            <h3 className="event_title">Diya Project</h3>
-          </div>
+          </Link>
           <div className="event_box">
             <div className="event_image">
               <img

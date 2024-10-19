@@ -158,11 +158,17 @@
 
   .carousel-control-prev {
     left: -60px;
+    @media (max-width: 500px) {
+      display: none;
+    }
     /* Move outside on the left */
   }
 
   .carousel-control-next {
     right: -60px;
+    @media (max-width: 500px) {
+      display: none;
+    }
     /* Move outside on the right */
   }
 

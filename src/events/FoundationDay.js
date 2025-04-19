@@ -144,10 +144,10 @@ function FoundationDay() {
               <img src="/images/gallery_image_3.jpg" alt="Foundation Day Celebration" />
             </div>
             <div>
-              <img src="/Foundation Day/FoundationDay25-1.JPG" alt="AASRA Members" />
+              <img src="/Foundation Day/Foundationday25-1.JPG" alt="AASRA Members" />
             </div>
             <div>
-              <img src="/Foundation Day/Group Photo Foundation Day.jpg" alt="Students Learning" />
+              <img src="/Foundation Day/Group-Photo-Foundation-Day.jpg" alt="Students Learning" />
             </div>
           </Carousel>
         </div>

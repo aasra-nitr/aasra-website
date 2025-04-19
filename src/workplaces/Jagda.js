@@ -45,21 +45,21 @@ function Jagda() {
                   <h3>News Feed</h3>
                 </div>
                 <div className="newsFeed_description">
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
+                  <p>Jagda News Feed</p>
                 </div>
               </div>
             </div>

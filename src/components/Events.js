@@ -8,15 +8,17 @@ function Events() {
       <section className="events_section">
         <h1 className="heading">EVENTS</h1>
         <div className="events_content">
-          <div className="event_box">
-            <div className="event_image">
-              <img
-                src="../images/foundation_day.jpg"
-                alt="Foundation Day"
-              ></img>
+          <Link to={`/events/FoundationDay`}>
+            <div className="event_box">
+              <div className="event_image">
+                <img
+                  src="../Foundation Day/FOUNDATION-DAY-2025.png"
+                  alt="Foundation Day"
+                ></img>
+              </div>
+              <h3 className="event_title">Foundation Day</h3>
             </div>
-            <h3 className="event_title">Foundation Day</h3>
-          </div>
+          </Link>
           <Link to={`/events/DiyaProject`}>
             <div className="event_box">
               <div className="event_image">
@@ -25,15 +27,17 @@ function Events() {
               <h3 className="event_title">Diya Project</h3>
             </div>
           </Link>
-          <div className="event_box">
-            <div className="event_image">
-              <img
-                src="../images/A leap of Creativity.png"
-                alt="Little Science Yard"
-              ></img>
+          <Link to={`/events/LSY`}>
+            <div className="event_box">
+              <div className="event_image">
+                <img
+                  src="../LSY/LSY-2024.png"
+                  alt="Little Science Yard"
+                ></img>
+              </div>
+              <h3 className="event_title">Little Science Yard</h3>
             </div>
-            <h3 className="event_title">Little Science Yard</h3>
-          </div>
+          </Link>
         </div>
       </section>
     </>

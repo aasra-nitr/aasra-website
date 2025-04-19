@@ -1,0 +1,1564 @@
+@import "variables";
+
+// Custom Variables
+$customYellowishWhite: #f8f4e9;
+
+
+.foundation-day-page {
+    font-family: Arial, sans-serif;
+    color: #333;
+
+    // Hero Section
+    .hero-section {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+
+        @media screen and (max-width: 768px) {
+            height: 70vh;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            z-index: 1;
+            
+            .carousel {
+                height: 100%;
+                
+                .carousel-inner {
+                    height: 100%;
+                }
+                
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    
+                    @media screen and (max-width: 768px) {
+                        object-position: center;
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+            width: 90%;
+            max-width: 800px;
+
+            h1 {
+                font-size: 3.5rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            p {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            }
+
+            .cta-button {
+                display: inline-block;
+                padding: 1rem 2rem;
+                background: $primaryColor;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background: darken($primaryColor, 10%);
+                    transform: translateY(-2px);
+                }
+            }
+        }
+    }
+
+    // About Section
+    .about-section {
+        padding: 5rem 2rem;
+        background: white;
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+
+            h2 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+                color: $primaryColor;
+            }
+
+            p {
+                font-size: 1.2rem;
+                line-height: 1.8;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    // Timeline Section
+    .timeline-section {
+        padding: 4rem 0;
+        background: $customYellowishWhite;
+        position: relative;
+        z-index: 2;
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 3rem;
+
+                h2 {
+                    font-size: 3.5rem;
+                    font-weight: 700;
+                    position: relative;
+                    display: inline-block;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 150px;
+                        height: 4px;
+                        background: #000000;
+                    }
+                }
+            }
+
+            .timeline {
+                position: relative;
+                padding: 2rem 0;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 4px;
+                    height: 100%;
+                    background: #000000;
+                }
+
+                .timeline-item {
+                    width: 50%;
+                    padding: 2rem;
+                    position: relative;
+
+                    &:nth-child(odd) {
+                        left: 0;
+                        text-align: right;
+
+                        &:before {
+                            right: -10px;
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            right: -20px;
+                            width: 20px;
+                            height: 20px;
+                            background: #000000;
+                            border-radius: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+
+                    &:nth-child(even) {
+                        left: 50%;
+                        text-align: left;
+
+                        &:before {
+                            left: -10px;
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: -20px;
+                            width: 20px;
+                            height: 20px;
+                            background: #000000;
+                            border-radius: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        width: 20px;
+                        height: 20px;
+                        background: #000000;
+                        border-radius: 50%;
+                        transform: translateY(-50%);
+                    }
+
+                    .timeline-content {
+                        background: white;
+                        padding: 1.5rem;
+                        border-radius: 10px;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+
+                        &:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+                        }
+
+                        .timeline-year {
+                            font-size: 1.5rem;
+                            font-weight: 700;
+                            color: #000000;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        .timeline-title {
+                            font-size: 1.3rem;
+                            font-weight: 600;
+                            margin-bottom: 0.5rem;
+                            color: #000000;
+                        }
+
+                        .timeline-description {
+                            font-size: 1.1rem;
+                            line-height: 1.6;
+                            color: #666;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Impact Section
+    .impact-section {
+        padding: 5rem 2rem;
+        background: white;
+
+        .impact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+
+            h2 {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: $primaryColor;
+            }
+
+            .impact-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 2rem;
+                padding: 2rem 0;
+
+                .impact-item {
+                    padding: 2rem;
+                    background: $customYellowishWhite;
+                    border-radius: 8px;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+
+                    .number {
+                        font-size: 3rem;
+                        font-weight: 700;
+                        color: $primaryColor;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .label {
+                        font-size: 1.2rem;
+                        color: #666;
+                    }
+                }
+            }
+        }
+    }
+
+    // Celebration Highlights Section
+    .highlights-section {
+        padding: 5rem 2rem;
+        background: white;
+
+        .highlights-container {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            h2 {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: $primaryColor;
+            }
+
+            .highlights-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                padding: 2rem 0;
+
+                .highlight-item {
+                    text-align: center;
+                    padding: 2rem;
+                    background: $customYellowishWhite;
+                    border-radius: 8px;
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 200px;
+                        object-fit: cover;
+                        border-radius: 8px;
+                        margin-bottom: 1rem;
+                    }
+
+                    h3 {
+                        font-size: 1.5rem;
+                        margin-bottom: 1rem;
+                        color: $primaryColor;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        line-height: 1.6;
+                    }
+                }
+            }
+        }
+    }
+
+    // Voices of Change Section
+    .voices-section {
+        padding: 5rem 2rem;
+        background: $customYellowishWhite;
+
+        .voices-container {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            h2 {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: $primaryColor;
+            }
+
+            .testimonials-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+
+                .testimonial-item {
+                    background: white;
+                    padding: 2rem;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+                    .quote {
+                        font-size: 1.1rem;
+                        line-height: 1.8;
+                        margin-bottom: 1.5rem;
+                        font-style: italic;
+                    }
+
+                    .author {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+
+                        img {
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+
+                        .author-info {
+                            h4 {
+                                font-size: 1.2rem;
+                                margin-bottom: 0.25rem;
+                                color: $primaryColor;
+                            }
+
+                            p {
+                                font-size: 0.9rem;
+                                color: #666;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Join the Movement Section
+    .join-section {
+        padding: 5rem 2rem;
+        background: white;
+        text-align: center;
+
+        .join-container {
+            max-width: 800px;
+            margin: 0 auto;
+
+            h2 {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+                color: $primaryColor;
+            }
+
+            p {
+                font-size: 1.2rem;
+                line-height: 1.8;
+                margin-bottom: 2rem;
+            }
+
+            .cta-buttons {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+
+                .btn {
+                    padding: 1rem 2rem;
+                    border-radius: 5px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+
+                    &.btn-primary {
+                        background: $primaryColor;
+                        color: white;
+
+                        &:hover {
+                            background: darken($primaryColor, 10%);
+                        }
+                    }
+
+                    &.btn-secondary {
+                        background: $secondaryColor;
+                        color: white !important;
+
+                        &:hover {
+                            background: darken($secondaryColor, 10%);
+                            color: white !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Footer Section
+    .footer-section {
+        padding: 3rem 2rem;
+        background: $secondaryColor;
+        color: white;
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+
+            .footer-column {
+                h3 {
+                    font-size: 1.5rem;
+                    margin-bottom: 1.5rem;
+                    color: $primaryColor;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        margin-bottom: 0.5rem;
+
+                        a {
+                            color: white;
+                            text-decoration: none;
+                            transition: color 0.3s ease;
+
+                            &:hover {
+                                color: $primaryColor;
+                            }
+                        }
+                    }
+                }
+
+                .social-links {
+                    display: flex;
+                    gap: 1rem;
+
+                    a {
+                        color: white;
+                        font-size: 1.5rem;
+                        transition: color 0.3s ease;
+
+                        &:hover {
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Documentary Section
+    .documentary-section {
+        padding: 5rem 2rem;
+        background: $customYellowishWhite;
+
+        .documentary-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+
+            h2 {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: $primaryColor;
+            }
+
+            .video-container {
+                position: relative;
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+                .documentary-video {
+                    width: 100%;
+                    display: block;
+                }
+
+                .video-captions {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    padding: 1rem;
+                    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+                    color: white;
+                    text-align: center;
+
+                    .caption {
+                        display: none;
+                        font-size: 1.2rem;
+                        font-weight: 600;
+
+                        &.active {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Student Spotlight Section
+    .spotlight-section {
+        padding: 5rem 2rem;
+        background: white;
+
+        .spotlight-container {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            h2 {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: $primaryColor;
+            }
+
+            .spotlight-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                padding: 2rem 0;
+
+                .spotlight-item {
+                    background: $customYellowishWhite;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    transition: transform 0.3s ease;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+
+                    .student-image {
+                        width: 100%;
+                        height: 200px;
+                        overflow: hidden;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .student-info {
+                        padding: 1.5rem;
+
+                        h3 {
+                            font-size: 1.5rem;
+                            color: $primaryColor;
+                            margin-bottom: 1rem;
+                        }
+
+                        .quote {
+                            font-size: 1.1rem;
+                            line-height: 1.6;
+                            font-style: italic;
+                            margin-bottom: 1rem;
+                        }
+
+                        .achievement {
+                            font-size: 1rem;
+                            color: #666;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Interactive Map Section
+    .map-section {
+        padding: 5rem 2rem;
+        background: white;
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+
+            h2 {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: $primaryColor;
+            }
+
+            .map-wrapper {
+                position: relative;
+                width: 100%;
+                max-width: 800px;
+                margin: 0 auto;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+                .map-image {
+                    width: 100%;
+                    display: block;
+                }
+
+                .map-pins {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+
+                    .map-pin {
+                        position: absolute;
+                        cursor: pointer;
+
+                        .pin-marker {
+                            width: 20px;
+                            height: 20px;
+                            background: $primaryColor;
+                            border-radius: 50%;
+                            position: relative;
+
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                width: 30px;
+                                height: 30px;
+                                border: 2px solid $primaryColor;
+                                border-radius: 50%;
+                                animation: pulse 2s infinite;
+                            }
+                        }
+
+                        .pin-content {
+                            position: absolute;
+                            bottom: 100%;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            background: white;
+                            padding: 1rem;
+                            border-radius: 8px;
+                            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                            width: 200px;
+                            display: none;
+                            z-index: 10;
+
+                            h3 {
+                                font-size: 1.2rem;
+                                color: $primaryColor;
+                                margin-bottom: 0.5rem;
+                            }
+
+                            p {
+                                font-size: 0.9rem;
+                                margin-bottom: 0.5rem;
+                            }
+
+                            img {
+                                width: 100%;
+                                height: 120px;
+                                object-fit: cover;
+                                border-radius: 4px;
+                            }
+                        }
+
+                        &:hover .pin-content {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Digital Art Wall Section
+    .art-wall-section {
+        padding: 5rem 2rem;
+        background: $customYellowishWhite;
+
+        .art-wall-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+
+            h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: $primaryColor;
+            }
+
+            .section-description {
+                font-size: 1.2rem;
+                margin-bottom: 3rem;
+                color: #666;
+            }
+
+            .art-wall-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+                padding: 2rem 0;
+
+                .art-item {
+                    background: white;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease;
+
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+
+                    .art-caption {
+                        padding: 1.5rem;
+                        text-align: left;
+
+                        p {
+                            font-size: 1.1rem;
+                            line-height: 1.6;
+                            margin-bottom: 0.5rem;
+                            font-style: italic;
+                        }
+
+                        span {
+                            font-size: 0.9rem;
+                            color: #666;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Founders' Message Section
+    .founders-section {
+        padding: 5rem 2rem;
+        background: white;
+
+        .founders-container {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            h2 {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: $primaryColor;
+            }
+
+            .founder-content {
+                display: grid;
+                grid-template-columns: 300px 1fr;
+                gap: 3rem;
+                align-items: start;
+
+                .founder-image {
+                    img {
+                        width: 100%;
+                        border-radius: 10px;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                    }
+                }
+
+                .founder-message {
+                    blockquote {
+                        font-size: 1.2rem;
+                        line-height: 1.8;
+                        margin-bottom: 2rem;
+                        font-style: italic;
+                        color: #333;
+                        position: relative;
+                        padding-left: 2rem;
+                        border-left: 4px solid $primaryColor;
+                    }
+
+                    .founder-info {
+                        h3 {
+                            font-size: 1.5rem;
+                            color: $primaryColor;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        p {
+                            font-size: 1rem;
+                            color: #666;
+                            margin-bottom: 0.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // AASRA Then vs Now Section
+    .comparison-section {
+        padding: 5rem 2rem;
+        background: $customYellowishWhite;
+
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+
+            h2 {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: $primaryColor;
+            }
+
+            .comparison-carousel {
+                .comparison-item {
+                    margin-bottom: 3rem;
+
+                    .comparison-images {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 2rem;
+                        margin-bottom: 1.5rem;
+
+                        .image-container {
+                            position: relative;
+                            border-radius: 10px;
+                            overflow: hidden;
+                            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+                            img {
+                                width: 100%;
+                                height: 300px;
+                                object-fit: cover;
+                            }
+
+                            .image-label {
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                padding: 0.5rem;
+                                background: rgba(0, 0, 0, 0.7);
+                                color: white;
+                                font-size: 1.2rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+
+                    .comparison-text {
+                        h3 {
+                            font-size: 1.5rem;
+                            color: $primaryColor;
+                            margin-bottom: 1rem;
+                        }
+
+                        p {
+                            font-size: 1.1rem;
+                            line-height: 1.6;
+                            color: #666;
+                            max-width: 600px;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // This Year's Plan Section
+    .plans-section {
+        padding: 5rem 2rem;
+        background: white;
+
+        .plans-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+
+            h2 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: $primaryColor;
+            }
+
+            .section-description {
+                font-size: 1.2rem;
+                margin-bottom: 3rem;
+                color: #666;
+            }
+
+            .plans-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                padding: 2rem 0;
+
+                .plan-item {
+                    background: $customYellowishWhite;
+                    padding: 2rem;
+                    border-radius: 10px;
+                    transition: transform 0.3s ease;
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+
+                    .plan-icon {
+                        font-size: 2.5rem;
+                        color: $primaryColor;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    h3 {
+                        font-size: 1.3rem;
+                        color: $primaryColor;
+                        margin-bottom: 1rem;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        line-height: 1.6;
+                        color: #666;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media screen and (max-width: 992px) {
+    .foundation-day-page {
+        .hero-section {
+            height: 80vh;
+
+            .hero-content {
+                h1 {
+                    font-size: 2.8rem;
+                }
+
+                p {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        .timeline-section {
+            .timeline-container {
+                .timeline {
+                    &:before {
+                        left: 0;
+                    }
+
+                    .timeline-item {
+                        width: 100%;
+                        padding-left: 2rem;
+
+                        &:nth-child(odd),
+                        &:nth-child(even) {
+                            left: 0;
+                            text-align: left;
+
+                            &:before {
+                                left: -10px;
+                            }
+
+                            &:after {
+                                left: -20px;
+                                right: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .highlights-section {
+            .highlights-container {
+                .highlights-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+
+        .voices-section {
+            .voices-container {
+                .testimonials-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+
+        .impact-section {
+            .impact-container {
+                .impact-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .foundation-day-page {
+        .hero-section {
+            height: 70vh;
+
+            .hero-content {
+                h1 {
+                    font-size: 2.2rem;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                }
+
+                .cta-button {
+                    padding: 0.8rem 1.6rem;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .about-section {
+            padding: 3rem 1rem;
+
+            .about-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .timeline-section {
+            padding: 3rem 0;
+
+            .timeline-container {
+                .section-header {
+                    h2 {
+                        font-size: 2.5rem;
+                    }
+                }
+
+                .timeline {
+                    .timeline-item {
+                        width: 100%;
+                        left: 0 !important;
+                        padding: 1.5rem;
+                        text-align: left !important;
+
+                        &:before,
+                        &:after {
+                            left: 0 !important;
+                            right: auto !important;
+                        }
+
+                        &:after {
+                            left: -20px !important;
+                        }
+
+                        .timeline-content {
+                            .timeline-year {
+                                font-size: 1.3rem;
+                            }
+
+                            .timeline-title {
+                                font-size: 1.1rem;
+                            }
+
+                            .timeline-description {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .highlights-section {
+            padding: 3rem 1rem;
+
+            .highlights-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .highlights-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+
+                    .highlight-item {
+                        padding: 1.5rem;
+
+                        img {
+                            height: 180px;
+                        }
+
+                        h3 {
+                            font-size: 1.3rem;
+                        }
+
+                        p {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .voices-section {
+            padding: 3rem 1rem;
+
+            .voices-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .testimonials-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+
+                    .testimonial-item {
+                        padding: 1.5rem;
+
+                        .quote {
+                            font-size: 1rem;
+                        }
+
+                        .author {
+                            img {
+                                width: 50px;
+                                height: 50px;
+                            }
+
+                            .author-info {
+                                h4 {
+                                    font-size: 1.1rem;
+                                }
+
+                                p {
+                                    font-size: 0.8rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .join-section {
+            padding: 3rem 1rem;
+
+            .join-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+
+                .cta-buttons {
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    .btn {
+                        width: 100%;
+                        text-align: center;
+                        padding: 0.8rem 1.6rem;
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        .footer-section {
+            padding: 2rem 1rem;
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+
+                .footer-column {
+                    h3 {
+                        font-size: 1.3rem;
+                    }
+
+                    ul li {
+                        font-size: 0.9rem;
+                    }
+
+                    .social-links {
+                        justify-content: center;
+
+                        a {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .impact-section {
+            padding: 3rem 1rem;
+
+            .impact-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .impact-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+
+                    .impact-item {
+                        padding: 1.5rem;
+
+                        .number {
+                            font-size: 2.5rem;
+                        }
+
+                        .label {
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .documentary-section {
+            padding: 3rem 1rem;
+
+            .documentary-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .video-container {
+                    .video-captions {
+                        .caption {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .spotlight-section {
+            padding: 3rem 1rem;
+
+            .spotlight-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .spotlight-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+
+                    .spotlight-item {
+                        .student-info {
+                            h3 {
+                                font-size: 1.3rem;
+                            }
+
+                            .quote {
+                                font-size: 1rem;
+                            }
+
+                            .achievement {
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .map-section {
+            padding: 3rem 1rem;
+
+            .map-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .map-wrapper {
+                    .map-pins {
+                        .map-pin {
+                            .pin-content {
+                                width: 160px;
+
+                                h3 {
+                                    font-size: 1rem;
+                                }
+
+                                p {
+                                    font-size: 0.8rem;
+                                }
+
+                                img {
+                                    height: 100px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .art-wall-section {
+            padding: 3rem 1rem;
+
+            .art-wall-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .section-description {
+                    font-size: 1rem;
+                }
+
+                .art-wall-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+
+                    .art-item {
+                        .art-caption {
+                            p {
+                                font-size: 1rem;
+                            }
+
+                            span {
+                                font-size: 0.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .founders-section {
+            padding: 3rem 1rem;
+
+            .founders-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .founder-content {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+
+                    .founder-image {
+                        max-width: 300px;
+                        margin: 0 auto;
+                    }
+
+                    .founder-message {
+                        blockquote {
+                            font-size: 1.1rem;
+                            padding-left: 1.5rem;
+                        }
+
+                        .founder-info {
+                            h3 {
+                                font-size: 1.3rem;
+                            }
+
+                            p {
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .comparison-section {
+            padding: 3rem 1rem;
+
+            .comparison-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .comparison-carousel {
+                    .comparison-item {
+                        .comparison-images {
+                            grid-template-columns: 1fr;
+                            gap: 1rem;
+
+                            .image-container {
+                                img {
+                                    height: 200px;
+                                }
+
+                                .image-label {
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+
+                        .comparison-text {
+                            h3 {
+                                font-size: 1.3rem;
+                            }
+
+                            p {
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .plans-section {
+            padding: 3rem 1rem;
+
+            .plans-container {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .section-description {
+                    font-size: 1rem;
+                }
+
+                .plans-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+
+                    .plan-item {
+                        padding: 1.5rem;
+
+                        .plan-icon {
+                            font-size: 2rem;
+                        }
+
+                        h3 {
+                            font-size: 1.2rem;
+                        }
+
+                        p {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

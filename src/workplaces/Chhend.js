@@ -45,21 +45,21 @@ function Chhend() {
                   <h3>News Feed</h3>
                 </div>
                 <div className="newsFeed_description">
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
-                  <p>sector-02 news feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
+                  <p>Chhend News Feed</p>
                 </div>
               </div>
             </div>

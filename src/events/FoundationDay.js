@@ -51,12 +51,12 @@ const celebrationHighlights = [
   {
     title: "Cultural Performances",
     description: "Students showcase their talents through various cultural programs",
-    image: "/Foundation Day/Cultural-Performance.jpg"
+    image: "/Foundation Day/Cultural-Performance.JPG"
   },
   {
     title: "Volunteer Speeches",
     description: "Experienced volunteers share their journey and impact stories",
-    image: "/Foundation Day/Volunteer-Speeches.jpg"
+    image: "/Foundation Day/Volunteer-Speeches.JPG"
   },
   {
     title: "Student Achievements",
@@ -144,7 +144,7 @@ function FoundationDay() {
               <img src="/images/gallery_image_3.jpg" alt="Foundation Day Celebration" />
             </div>
             <div>
-              <img src="/Foundation Day/FoundationDay25-1.jpg" alt="AASRA Members" />
+              <img src="/Foundation Day/FoundationDay25-1.JPG" alt="AASRA Members" />
             </div>
             <div>
               <img src="/Foundation Day/Group Photo Foundation Day.jpg" alt="Students Learning" />

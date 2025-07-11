@@ -75,28 +75,28 @@ function Chhend() {
               <div className="sector_head_container">
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/ChhendVC-Aman.jpg" alt="head Image1" />
+                    <img src="../images/avatar.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Aman</p>
+                    <p></p>
                     <p>Vice-Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/ChhendCap-Priyanka.jpg" alt="head Image1" />
+                    <img src="../images/himanshu2025.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Priyanka</p>
+                    <p>Himanshu</p>
                     <p>Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/ChhendVC-Himanshu.jpg" alt="head Image1" />
+                    <img src="../images/avatar.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Himanshu</p>
+                    <p></p>
                     <p>Vice-Captain</p>
                   </div>
                 </div>

@@ -17,12 +17,27 @@
       width: 60%;
       display: grid;
       grid-template-columns: repeat(3, minmax(200px, 1fr));
-      grid-column-gap: 16px;
-      grid-row-gap: 30px;
+      grid-column-gap: 200px;
+      grid-row-gap: 150px;
       
-      &.two-items {
-        grid-template-columns: repeat(2, minmax(200px, 1fr));
-        justify-content: space-around; // Center the two items within the container
+      // &.two-items {
+      //   grid-template-columns: repeat(2, minmax(200px, 1fr));
+      //   justify-content: space-around; // Center the two items within the container
+      //   grid-column-gap: 80px; // add more space between two items
+      // }
+
+      // &.three-items {
+      //   grid-template-columns: repeat(3, minmax(200px, 1fr));
+      //   grid-column-gap: 60px;
+      //   grid-row-gap: 40px;
+      // }
+
+      // Center a single executive card (e.g., Content Head) both vertically and horizontally
+      &:only-child, &.single-item {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        min-height: 350px; // adjust as needed for vertical centering
       }
 
       .head_box {

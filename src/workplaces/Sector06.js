@@ -75,28 +75,28 @@ function Sector06() {
               <div className="sector_head_container">
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/Sector6VCNimai.jpg" alt="head Image1" />
+                    <img src="../images/avatar.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Nimai</p>
+                    <p></p>
                     <p>Vice-Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/Sector6Cap-ratnakar.jpg" alt="head Image1" />
+                    <img src="../images/maikel2025.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Ratnakar</p>
+                    <p>Maikel</p>
                     <p>Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/Sector6VCmahaprasad.jpg" alt="head Image1" />
+                    <img src="../images/avatar.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Mahaprasad</p>
+                    <p></p>
                     <p>Vice-Captain</p>
                   </div>
                 </div>

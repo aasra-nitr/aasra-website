@@ -75,11 +75,20 @@ function Jagda() {
               <div className="sector_head_container">
                 <div className="head_box">
                   <div className="head_image">
-                    <img src="../images/jagdaVC-Krishnanand.jpg" alt="head Image1" />
+                    <img src="../images/avatar.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Krishnanand</p>
+                    <p></p>
                     <p>Vice-Captain</p>
+                  </div>
+                </div>
+                <div className="head_box">
+                  <div className="head_image">
+                    <img src="../images/dambru2025.jpg" alt="head Image1" />
+                  </div>
+                  <div className="sector_post_holder">
+                    <p>Dambrudhar</p>
+                    <p>Captain</p>
                   </div>
                 </div>
                 <div className="head_box">
@@ -87,16 +96,7 @@ function Jagda() {
                     <img src="../images/avatar.jpg" alt="head Image1" />
                   </div>
                   <div className="sector_post_holder">
-                    <p>Abishek</p>
-                    <p>Captain</p>
-                  </div>
-                </div>
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/JagdaVC-Dambrudhar.jpg" alt="head Image1" />
-                  </div>
-                  <div className="sector_post_holder">
-                    <p>Dambrudhara</p>
+                    <p></p>
                     <p>Vice-Captain</p>
                   </div>
                 </div>

@@ -1,4 +1,100 @@
+@import "variables";
+
 .home {
-    width: 100%;
-    display: grid;
+  display: block; /* changed from grid to block — grid causes subpixel gaps */
+}
+
+/* ── Stats Section — full-width wrapper + constrained inner ── */
+.stats-section-wrap {
+  padding: 7rem 0;
+  /* background comes from inline style in Home.js */
+}
+
+.stats-inner {
+  /* page-section gives consistent horizontal margins */
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.stats_intro {
+  margin-bottom: 4.5rem;
+}
+
+.stats_grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
+/* ── Stat Card ── */
+.stat_card {
+  padding: 3rem 2rem 2.4rem;
+  text-align: center;
+  border-radius: 2rem;
+  background: #ffffff;
+  border: 1px solid rgba(31, 41, 55, 0.05);
+  box-shadow: 0 8px 28px rgba(31, 41, 55, 0.06);
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+
+  /* Top gradient strip — AASRA teal → gold */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, $accentColor, $goldColor);
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 56px rgba(31, 41, 55, 0.12);
+  }
+
+  .stat_value {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.2rem;
+    color: $primaryColor;
+    font-size: clamp(3.2rem, 4vw, 4.4rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.8rem;
+    font-family: "Poppins", sans-serif;
+
+    span {
+      font-size: 2.4rem;
+      color: $accentColor;
+      font-weight: 700;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: $greyColor;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .stats_grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .stats_grid        { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats-section-wrap { padding: 5rem 0; }
+}
+
+@media (max-width: 480px) {
+  .stats_grid { grid-template-columns: 1fr; }
 }

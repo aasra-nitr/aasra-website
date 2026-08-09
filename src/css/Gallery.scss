@@ -1,24 +1,401 @@
-.gallery_image {
-  height: 85vh;
+@import "variables";
+$teal: #009688;
+$gold: #F4B247;
+
+/* ==============================
+   HERO SECTION
+============================== */
+
+.gallery_section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  /* Top padding clears the fixed 7rem navbar */
+  padding: calc(7rem + 3rem) clamp(1.6rem, 4vw, 4rem) 4rem;
+  isolation: isolate;
+  /* Fade bottom toward #111827 to merge with wave divider */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 12rem;
+    background: linear-gradient(to bottom, transparent, rgba(17, 24, 39, 0.6));
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* ==============================
+   BACKGROUND
+============================== */
+
+.gallery_backdrop,
+.gallery_overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.gallery_backdrop {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(0, 150, 136, .18), transparent 30%),
+    radial-gradient(circle at 90% 10%, rgba(244, 178, 71, .14), transparent 24%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, .04), transparent 35%),
+    linear-gradient(180deg, #1f2937 0%, #111827 100%);
+}
+
+.gallery_overlay {
+  background:
+    linear-gradient(rgba(255, 255, 255, .02),
+      rgba(0, 0, 0, .18));
+}
+
+/* ==============================
+   LAYOUT
+============================== */
+
+.gallery_layout {
+  position: relative;
+  z-index: 3;
+  max-width: 1280px;
   width: 100%;
+  margin: auto;
+  padding: 0 clamp(1.6rem, 3vw, 3rem);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ==============================
+   TEXT
+============================== */
+
+.gallery_copy {
+
+  color: white;
+
+  .section-eyebrow {
+
+    display: inline-flex;
+
+    padding: .55rem 1.1rem;
+
+    border-radius: 999px;
+
+    background: rgba(0, 184, 176, .12);
+
+    border: 1px solid rgba(0, 184, 176, .2);
+
+    color: $teal;
+
+    font-weight: 700;
+
+    letter-spacing: .12rem;
+
+    text-transform: uppercase;
+
+    font-size: 1.1rem;
+
+  }
+
+    h1 {
+    margin: 1.3rem 0;
+
+    font-size: clamp(3.8rem, 6vw, 6.2rem);
+
+    line-height: 0.92;
+
+    font-weight: 800;
+
+    letter-spacing: -0.05em;
+
+    max-width: 11ch;   // <-- increased
+
+    text-wrap: balance; // supported in modern browsers
+  }
+  p {
+    max-width: 620px;
+    font-size: 1.65rem;
+    line-height: 1.78;
+    color: rgba(255, 255, 255, 0.82);
+    margin-bottom: 2.4rem;
+  }
+}
+
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.gallery_actions {
+
+  display: flex;
+
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+
+}
+
+.gallery_actions .btn {
+
+  padding: 1rem 2rem;
+
+  border-radius: 999px;
+
+  font-weight: 700;
+
+  font-size: 1rem;
+
+  transition: .3s;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+
+}
+
+.gallery_actions .btn:hover {
+
+  transform: translateY(-3px);
+
+}
+
+/* ==============================
+   TAGS
+============================== */
+
+.gallery_highlights {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: .8rem;
+
+  span {
+
+    padding: .7rem 1rem;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, .08);
+
+    border: 1px solid rgba(255, 255, 255, .12);
+
+    font-size: .9rem;
+
+    font-weight: 600;
+
+    letter-spacing: .03rem;
+
+    color: rgba(255, 255, 255, .88);
+
+    backdrop-filter: blur(12px);
+
+  }
+
+}
+
+/* ==============================
+   IMAGE
+============================== */
+
+.images_section {
+
+  position: relative;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  background: #111;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, .35);
+
+  transition: .35s;
+
+}
+
+/* glow */
+
+.images_section::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -40px;
+
+  background:
+
+    radial-gradient(rgba(0, 184, 176, .15),
+      transparent 70%);
+
+  filter: blur(45px);
+
+  z-index: -1;
+
+}
+
+.gallery_image {
+
+  height: min(68vh, 600px);
 
   img {
+
     width: 100%;
+
+    height: 100%;
+
+    display: block;
+
     object-fit: cover;
+
+    transition: transform .7s;
+
   }
+
 }
 
-@media screen and (max-width: 768px) {
-  .gallery_image {
-    width: 100%;
-    height: 70vh;
+.images_section:hover img {
 
-    img {
-      width: 100%;
-      height: 70vh;
-      object-fit: cover;
+  transform: scale(1.04);
+
+}
+
+/* ==============================
+   CAROUSEL
+============================== */
+
+.carousel,
+.slider-wrapper,
+.slider,
+.slider-wrapper ul,
+.slider-wrapper li {
+
+  height: 100%;
+
+}
+
+/* ==============================
+   TABLET
+============================== */
+
+@media(max-width:1000px) {
+
+  .gallery_layout {
+
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+
+  }
+
+  .gallery_copy {
+
+    order: 2;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    h1 {
+
+      max-width: none;
+
     }
+
   }
+
+  .images_section {
+
+    order: 1;
+
+    max-width: 650px;
+
+    margin: auto;
+
+  }
+
+  .gallery_actions {
+
+    justify-content: center;
+
+  }
+
+  .gallery_highlights {
+
+    justify-content: center;
+
+  }
+
 }
-// @media screen and (min-width: 769px) and (max-width: 1200px) {
-// }
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media(max-width:768px) {
+
+  .gallery_section {
+    padding: calc(7rem + 2rem) 0 3rem;
+    min-height: auto;
+  }
+
+  .gallery_copy {
+
+    h1 {
+
+      font-size: 3rem;
+
+    }
+
+    p {
+
+      font-size: 1.05rem;
+
+    }
+
+  }
+
+  .gallery_image {
+
+    height: 360px;
+
+  }
+
+  .gallery_actions {
+
+    flex-direction: column;
+
+    width: 100%;
+
+    .btn {
+
+      width: 100%;
+
+    }
+
+  }
+
+  .gallery_highlights {
+
+    gap: .6rem;
+
+    span {
+
+      font-size: .8rem;
+
+    }
+
+  }
+
+}

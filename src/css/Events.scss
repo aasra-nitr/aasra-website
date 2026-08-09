@@ -1,72 +1,379 @@
 @import "variables";
 
+/* ─────────────────────────────────────
+   EVENTS SECTION  (dark themed strip)
+───────────────────────────────────── */
+
+$bg1:   #0a1628;
+$bg2:   #0f1e38;
+$text:  #faf9f6;
+$muted: rgba(250, 249, 246, 0.78);
+$gold:  #f4b247;
+$teal:  #00c4b8;
 
 .events_section {
-    @include headingStyle($primaryColor);
-    @include grid;
-    background-color: $secondaryColor;
+  width: 100%;
+  padding: 10rem 0 8rem;
+  background: linear-gradient(160deg, $bg1 0%, $bg2 55%, #0c1a30 100%);
+  color: $text;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
 
-    .events_content {
-        @include grid;
-        width: 80%;
-        gap: 5rem;
-        justify-content: space-evenly;
-        grid-template-columns: repeat(3, 1fr);
-        margin-bottom: 5rem;
+  /* Radial top glow */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100rem;
+    height: 50rem;
+    background: radial-gradient(ellipse at center top, rgba(0, 196, 184, 0.09) 0%, transparent 65%);
+    pointer-events: none;
+  }
 
-        .event_box {
-            @include grid;
-            width: 400px;
-            height: 400px;
+  /* Gold accent bottom glow */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4rem;
+    right: -8rem;
+    width: 60rem;
+    height: 40rem;
+    background: radial-gradient(ellipse, rgba(244, 178, 71, 0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
 
-            .event_title {
-                margin-top: 2rem;
-                border: 3px double rgb(249, 244, 172);
-                font-size: 2rem;
-                color: var(--primary-color);
-                padding: 0.5rem 1.5rem;
-            }
+  .section-intro,
+  .events_timeline {
+    width: min(124rem, calc(100% - clamp(2rem, 5vw, 7rem) * 2));
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
 
-            .event_image {
-                position: relative;
-                border-radius: 1rem;
-                width: 350px;
-                height: 330px;
-                overflow: hidden;
-                transition: transform 0.25s ease-in-out;
+  .section-intro {
+    margin-bottom: 5rem;
+  }
 
-                img {
-                    border-radius: 1rem;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
+  /* Override global eyebrow for dark bg */
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1.5rem;
+    border-radius: 999px;
+    background: rgba($gold, 0.1);
+    border: 1px solid rgba($gold, 0.25);
+    margin-bottom: 1.4rem;
+    color: $gold;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 1.15rem;
+  }
 
-                &:hover {
-                    cursor: pointer;
-                    transform: scale(1.1);
-                }
-            }
-        }
+  .section-heading {
+    margin: 0 0 1.4rem;
+    font-size: clamp(2.8rem, 4.8vw, 5rem);
+    line-height: 1.05;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.035em;
+  }
+
+  .section-copy {
+    max-width: 68rem;
+    margin: 0;
+    color: $muted;
+    font-size: 1.65rem;
+    line-height: 1.82;
+  }
+
+  /* ── Timeline spine ── */
+  .events_timeline {
+    position: relative;
+    display: grid;
+    gap: 2.8rem;
+    padding-left: 5rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, $teal 0%, $gold 60%, rgba($gold, 0.08) 100%);
     }
+  }
+
+  /* ── Event link ── */
+  .event_link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    outline: none;
+    border-radius: 2.4rem;
+
+    &:focus-visible {
+      outline: 3px solid rgba($gold, 0.5);
+      outline-offset: 4px;
+    }
+  }
+
+  /* ── Event card ── */
+  .event_box {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    min-height: 300px;
+    overflow: hidden;
+    border-radius: 2.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 20px 56px rgba(0, 0, 0, 0.45);
+    transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 280ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 280ms ease;
+
+    /* Timeline dot */
+    &::before {
+      content: "";
+      position: absolute;
+      left: -50px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: $gold;
+      border: 3px solid $bg1;
+      box-shadow: 0 0 0 5px rgba($teal, 0.28), 0 0 16px rgba($gold, 0.4);
+      z-index: 3;
+      transition: transform 280ms ease, box-shadow 280ms ease;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 36px 80px rgba(0, 0, 0, 0.55);
+      border-color: rgba(255, 255, 255, 0.14);
+
+      &::before {
+        transform: translateY(-50%) scale(1.3);
+        box-shadow: 0 0 0 6px rgba($teal, 0.35), 0 0 24px rgba($gold, 0.5);
+      }
+
+      .event_image img {
+        transform: scale(1.07);
+        filter: brightness(1.08) saturate(1.12);
+      }
+
+      .event_cta {
+        color: $gold;
+        gap: 1.2rem;
+
+        &::after {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+
+  /* ── Event text side ── */
+  .event_copy {
+    position: relative;
+    z-index: 1;
+    padding: 3.5rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.2rem;
+    background: linear-gradient(
+      140deg,
+      rgba(10, 25, 50, 0.98) 0%,
+      rgba(14, 32, 62, 0.95) 100%
+    );
+    overflow: hidden;
+
+    /* Grid dot pattern */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 22px 22px;
+      pointer-events: none;
+    }
+
+    /* Left accent stripe */
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 2.5rem;
+      bottom: 2.5rem;
+      width: 3px;
+      background: linear-gradient(180deg, $teal, $gold);
+      border-radius: 0 999px 999px 0;
+    }
+
+    .event_year {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 0.55rem 1.3rem;
+      border-radius: 999px;
+      background: rgba($gold, 0.12);
+      border: 1px solid rgba($gold, 0.28);
+      color: $gold;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .event_title {
+      margin: 0;
+      font-size: clamp(2.2rem, 2.8vw, 3rem);
+      line-height: 1.1;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.025em;
+    }
+
+    p {
+      margin: 0;
+      color: rgba(250, 249, 246, 0.76);
+      font-size: 1.5rem;
+      line-height: 1.78;
+    }
+
+    .event_cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 0.6rem;
+      width: fit-content;
+      color: rgba(255, 255, 255, 0.82);
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: 0.02em;
+      transition: color 220ms ease, gap 220ms ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding-bottom: 0.2rem;
+
+      &::after {
+        content: "→";
+        display: inline-block;
+        transition: transform 220ms ease;
+      }
+    }
+  }
+
+  /* ── Event image side ── */
+  .event_image {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
+    background: #06101e;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease;
+    }
+
+    /* Subtle vignette overlay */
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(10, 22, 40, 0.15), rgba(0, 0, 0, 0.08));
+      pointer-events: none;
+    }
+  }
 }
 
-@media screen and (max-width: 768px) {
-    .events_section {
-        .events_content {
-            width: 100%;
-            grid-template-columns: 1fr;
-        }
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .events_section {
+    padding: 6rem 0 6rem;
+
+    .section-intro,
+    .events_timeline {
+      width: calc(100% - 3.2rem);
     }
+
+    .events_timeline {
+      padding-left: 3.6rem;
+      &::before { left: 14px; }
+    }
+
+    .event_box {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      &::before { left: -38px; }
+    }
+
+    .event_copy {
+      padding: 2.8rem 2.4rem;
+    }
+
+    .event_image {
+      min-height: 260px;
+      height: 260px;
+    }
+  }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1000px) {
-    .events_section {
-        .events_content {
-            width: 95%;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 3rem;
-            row-gap: 5rem;
-        }
+@media (max-width: 768px) {
+  .events_section {
+    padding: 5rem 0 5rem;
+
+    .section-intro,
+    .events_timeline {
+      width: calc(100% - 2.4rem);
     }
+
+    .events_timeline {
+      padding-left: 2.8rem;
+      gap: 2rem;
+      &::before { left: 12px; }
+    }
+
+    .section-heading { font-size: 2.6rem; }
+    .section-copy { font-size: 1.5rem; }
+
+    .event_box {
+      border-radius: 2rem;
+      &::before { left: -30px; width: 12px; height: 12px; }
+    }
+
+    .event_copy {
+      padding: 2.2rem 2rem;
+      gap: 0.9rem;
+
+      .event_title { font-size: 2.1rem; }
+      p { font-size: 1.4rem; }
+    }
+
+    .event_image { height: 230px; min-height: 230px; }
+  }
+}
+
+@media (max-width: 480px) {
+  .events_section {
+    .event_copy {
+      padding: 1.8rem 1.6rem;
+      .event_year { font-size: 1.1rem; }
+      .event_title { font-size: 1.9rem; }
+      p { font-size: 1.35rem; }
+    }
+    .event_image { height: 210px; min-height: 210px; }
+  }
 }

@@ -1,226 +1,302 @@
 @import "variables";
 
-.sector_section {
-  display: grid;
-  padding-top: 50px;
 
-  .sector_homepage {
-    margin: 0 auto;
-    padding-bottom: 2rem;
-    width: 95%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+/* ─────────────────────────────────────
+   SECTOR / WORKPLACE DETAIL PAGE
+───────────────────────────────────── */
 
-    .sector_newsFeed {
-      width: 25%;
-      display: flex;
-      flex-direction: column;
-      border: 2px solid rgba(200, 200, 200, 0.18);
-      height: 60vh;
+.sector_page_wrap {
+  width: 100%;
+  background: #fdfcf9;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
 
-      hr {
-        width: 100%;
-        border: 0;
-        height: 2px;
-        background: #ccc;
-      }
-
-      .newsFeed_heading {
-        border-bottom: 1px solid #ededed;
-        position: sticky;
-
-        h3 {
-          margin: 0.8rem auto;
-          text-align: center;
-          font-weight: 500;
-          font-size: 2.2rem;
-        }
-      }
-
-      .newsFeed_description {
-        overflow-y: scroll;
-        p {
-          font-size: 1.5rem;
-          letter-spacing: 0.3px;
-          padding: 0 2rem;
-        }
-      }
-    }
-
-    .sector_gallery {
-      width:70%;
-
-      .sector_image {
-        width: 100%;
-
-        img {
-          width: 100%;
-          height: 60vh;
-          object-fit: cover;
-        }
-      }
-    }
-  }
-
-  .sector_description {
-    @include headingStyle($primaryColor);
-    background-color: $secondaryColor;
-    padding-bottom: 7rem;
-
-    .sector_para {
-      font-size: 1.8rem;
-      width: 85%;
-      letter-spacing: 1px;
-      line-height: 3rem;
-      font-weight: 400;
-      opacity: 0.8;
-      margin: 0 auto;
-      text-align: justify;
-    }
-  }
-
-  .sector_head_section {
-    @include headingStyle($secondaryColor);
+/* ── Hero Section (Full width banner) ── */
+.sector_hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  background: #111;
+  overflow: hidden;
+  margin-bottom: 5rem;
+  
+  .sector_carousel {
     width: 100%;
-    background-color: $primaryColor;
-    margin: 0 auto;
-    text-align: center;
-
-    .sector_head_container {
-      margin: 5rem auto;
-      padding-top: 5rem;
-      width: 60%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      grid-column-gap: 16px;
-      grid-row-gap: 30px;
-
-      .head_box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        color: $secondaryColor;
-
-        .head_image {
-          width: 120px;
-          height: 120px;
-          border-radius: 50%;
-
-          img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-          }
-        }
-
-        .sector_post_holder {
-          padding: 2rem 0;
-
-          p {
-            line-height: 2.7rem;
-            margin-bottom: 0;
-
-            &:first-child {
-              font-weight: 300;
-              font-size: 1.8rem;
-            }
-            &:last-child {
-              font-weight: 500;
-              font-size: 1.5rem;
-              letter-spacing: 2px;
-            }
-          }
-        }
+    height: 100%;
+    
+    .carousel-slider {
+      height: 100%;
+    }
+    
+    .carousel_slide {
+      height: 60vh;
+      min-height: 400px;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.8;
       }
     }
   }
-
-  .sector_members_section {
-    @include headingStyle($primaryColor);
-
-    .members_name_container {
-      display: grid;
-      width: 95%;
-      margin: 7rem auto;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 2rem;
-
-      .sector_member {
-        border: 3px solid #eeeeee;
-        font-size: 2.2rem;
-        text-align: center;
-        padding: 1rem 2rem;
-        border-radius: 10px;
+  
+  .sector_hero_overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    /* Vignette gradient */
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.4) 60%,
+      #fdfcf9 100%
+    );
+    pointer-events: none;
+    z-index: 10;
+    
+    .page-section {
+      width: 100%;
+      text-align: left;
+      padding-top: 10vh; /* Push down slightly */
+      
+      .eyebrow {
+        display: inline-block;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: $goldColor;
+        margin-bottom: 1rem;
+        padding: 0.4rem 1.2rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .hero_title {
+        font-size: clamp(4rem, 8vw, 7.5rem);
+        font-weight: 800;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       }
     }
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .sector_section {
-    width: 100%;
+/* ── Description Section ── */
+.sector_content_wrap {
+  margin-bottom: 7rem;
+  
+  .sector_description {
+    background: #fff;
+    border-radius: 2.4rem;
+    padding: clamp(3rem, 6vw, 6rem);
+    box-shadow: 
+      0 10px 40px rgba(0, 150, 136, 0.04),
+      0 1px 3px rgba(31, 41, 55, 0.02);
+    border: 1px solid rgba(0, 150, 136, 0.08);
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    .section-heading {
+      font-size: clamp(2.8rem, 5vw, 4rem);
+      font-weight: 700;
+      color: $primaryColor;
+      margin-bottom: 2.5rem;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      display: inline-block;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -1rem;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: $accentColor;
+        border-radius: 2px;
+      }
+    }
+    
+    .description_text {
+      font-size: 1.75rem;
+      line-height: 1.8;
+      color: $greyColor;
+      font-weight: 400;
+      white-space: pre-line;
+      letter-spacing: 0.01em;
+    }
+  }
+}
 
-    .sector_homepage {
-      width: 100%;
+/* ── Leadership / Post Holders Section ── */
+.sector_leaders_wrap {
+  background: $primaryColor;
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+  
+  /* Decorative background glow */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20rem;
+    right: -10rem;
+    width: 60rem;
+    height: 60rem;
+    background: radial-gradient(circle, rgba(0, 150, 136, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  
+  .section-intro {
+    text-align: center;
+    margin-bottom: 6rem;
+    
+    .section-eyebrow {
+      color: $accentColor;
+      display: block;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    
+    .section-heading {
+      color: #fff;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+    }
+  }
+  
+  .leaders_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    
+    .leader_card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 2rem;
+      padding: 3rem 2rem;
+      text-align: center;
+      display: flex;
       flex-direction: column;
-
-
-      .sector_newsFeed {
-        width: 95%;
-        margin: 0 auto;
-        margin-top: 1rem;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  background 300ms ease,
+                  border-color 300ms ease;
+      
+      &:hover {
+        transform: translateY(-8px);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(245, 176, 65, 0.3);
         
-        .newsFeed_heading {
-          font-size: 1.7rem;
-        }
-        
-        .newsFeed_description {
-          font-size: 1.3rem;
+        .leader_avatar img {
+          transform: scale(1.05);
+          border-color: $goldColor;
         }
       }
       
-      .sector_gallery {
-        width: 100%;
-        .sector_image {
-          width: 100%;
-
-          img {
-            width: 100%;
-            object-fit: cover;
-          }
+      &.empty_leader {
+        opacity: 0.6;
+        &:hover {
+          transform: none;
+          background: rgba(255, 255, 255, 0.03);
+          border-color: rgba(255, 255, 255, 0.08);
         }
       }
-    }
-
-    .sector_description {
-      .sector_para {
-        font-size: 1.3rem;
-        line-height: 2.2rem;
-      }
-    }
-
-    .sector_head_section {
-      .head_image {
-        width: 90px;
-        height: 90px;
-
+      
+      .leader_avatar {
+        width: 14rem;
+        height: 14rem;
+        margin-bottom: 2rem;
+        border-radius: 50%;
+        padding: 4px;
+        background: linear-gradient(135deg, $accentColor, $goldColor);
+        
         img {
-          width: 90px;
-          height: 90px;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 4px solid $primaryColor;
+          transition: transform 300ms ease, border-color 300ms ease;
+        }
+      }
+      
+      .leader_info {
+        .leader_name {
+          font-size: 2.2rem;
+          font-weight: 700;
+          color: #fff;
+          margin-bottom: 0.5rem;
+          font-family: 'Poppins', sans-serif;
+        }
+        
+        .leader_role {
+          display: inline-block;
+          font-size: 1.3rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: $goldColor;
+          background: rgba(245, 176, 65, 0.1);
+          padding: 0.4rem 1.2rem;
+          border-radius: 999px;
         }
       }
     }
+  }
+}
 
-    .sector_members_section {
-      .members_name_container {
-        margin: 5rem auto;
-        grid-template-columns: repeat(2, 1fr);
+/* ── Loading State ── */
+.sector_loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: $primaryColor;
+  font-weight: 600;
+  background: #fdfcf9;
+}
 
-        .sector_member {
-          font-size: 1.5rem;
-        }
-      }
+/* ── Responsive ── */
+@media screen and (max-width: 768px) {
+  .sector_hero {
+    height: 50vh;
+    .sector_carousel .carousel_slide {
+      height: 50vh;
+    }
+  }
+  
+  .sector_content_wrap .sector_description {
+    padding: 3rem 2rem;
+    border-radius: 1.6rem;
+  }
+  
+  .sector_leaders_wrap {
+    padding: 6rem 0;
+    
+    .leaders_grid {
+      grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+      gap: 2rem;
     }
   }
 }

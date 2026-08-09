@@ -1,7 +1,31 @@
 .app {
     width: 100%;
-    // overflow-x: hidden;
-    display: grid;
-    grid-template-columns: auto;
-    place-items: center; 
+    overflow-x: hidden;
+}
+
+.layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 
+  Fixed navbar is 7rem tall.
+  The hero (Gallery) handles its own top padding.
+  All OTHER pages need this top padding on site-main.
+  We use a CSS custom property so it's easy to change.
+*/
+:root {
+    --nav-height: 7rem;
+}
+
+.site-main {
+    flex: 1;
+}
+
+/* Non-hero pages — add top padding so content isn't hidden under navbar.
+   Pages that start with a full-screen hero (Gallery) handle this themselves. */
+.site-main > *:not(.home) {
+    padding-top: var(--nav-height);
 }

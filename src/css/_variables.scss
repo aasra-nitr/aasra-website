@@ -1,44 +1,86 @@
-$primaryColor: #373b44;
-$secondaryColor: #fffef1;
-$tertiaryColor: #3e3e3e;
-$greyColor : #ccc;
-$dangerColor: #e74c3c;
+:root {
+    /* Brand colours */
+    --aasra-cream: #faf9f6;
+    --aasra-navy: #1f2937;
+    --aasra-teal: #009688;
+    --aasra-gold: #f5b041;
+    --aasra-green: #5cb85c;
 
+    /* Surface & glass */
+    --aasra-surface: rgba(255, 255, 255, 0.82);
+    --aasra-surface-strong: rgba(255, 255, 255, 0.94);
+    --aasra-surface-dark: rgba(31, 41, 55, 0.97);
 
+    /* Borders */
+    --aasra-border: rgba(31, 41, 55, 0.08);
+    --aasra-border-light: rgba(31, 41, 55, 0.05);
+
+    /* Shadows */
+    --aasra-shadow: 0 24px 60px rgba(31, 41, 55, 0.13);
+    --aasra-shadow-soft: 0 12px 40px rgba(31, 41, 55, 0.08);
+    --aasra-shadow-card: 0 8px 28px rgba(31, 41, 55, 0.07);
+
+    /* Radii */
+    --radius-sm: 1.2rem;
+    --radius-md: 1.8rem;
+    --radius-lg: 2.4rem;
+    --radius-xl: 3rem;
+    --radius-pill: 999px;
+
+    /* Transitions */
+    --transition-fast: 180ms cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-base: 280ms cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-slow: 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── SCSS Variables ── */
+$primaryColor:    #1f2937;
+$secondaryColor:  #faf9f6;
+$tertiaryColor:   #465165;
+$greyColor:       #6b7280;
+$dangerColor:     #d64545;
+$accentColor:     #009688;
+$goldColor:       #f5b041;
+$successColor:    #5cb85c;
+
+/* ── Mixins ── */
+
+/* Centered h1 heading with gradient underline */
 @mixin headingStyle($color) {
     h1 {
         position: relative;
         color: $color;
-        font-size: 3.5rem;
-        font-weight: 600;
+        font-size: clamp(2.8rem, 4vw, 4.8rem);
+        font-weight: 800;
         text-align: center;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin: 5rem 0;
-        
+        letter-spacing: -0.03em;
+        padding: 5rem 1.6rem 2rem;
+        margin: 0 auto 1.6rem;
+
         &::after {
             content: "";
             position: absolute;
-            width: 10vw;
-            bottom: -35%;
+            width: 5.5rem;
+            height: 4px;
+            bottom: -1rem;
             left: 50%;
             transform: translateX(-50%);
-            border-bottom: 3px solid $color;
+            border-radius: var(--radius-pill);
+            background: linear-gradient(90deg, $accentColor, $goldColor);
         }
     }
 }
 
-@mixin grid{
+@mixin grid {
     display: grid;
     place-items: center;
 }
 
-@mixin flex($direc,$justCont) {
+@mixin flex($direc, $justCont) {
     display: flex;
     flex-direction: $direc;
     align-items: center;
     justify-content: $justCont;
-    
 }
 
 @mixin truncate-lines($lineCount) {
@@ -47,4 +89,36 @@ $dangerColor: #e74c3c;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
+}
+
+/* Glass-morphism card */
+@mixin glass-card {
+    background: var(--aasra-surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--aasra-border);
+    box-shadow: var(--aasra-shadow-soft);
+}
+
+/* Teal gradient button */
+@mixin teal-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 1.2rem 2.4rem;
+    border-radius: var(--radius-pill);
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, $accentColor, darken($accentColor, 8%));
+    box-shadow: 0 8px 24px rgba(0, 150, 136, 0.25);
+    cursor: pointer;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 36px rgba(0, 150, 136, 0.35);
+    }
+}

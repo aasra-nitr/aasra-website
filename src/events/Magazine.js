@@ -96,8 +96,10 @@ const Magazine = () => {
                 <button className="view-button">View Magazine</button>
               </div>
             </div>
-            <h3>{magazine.title}</h3>
-            <p>{magazine.description}</p>
+            <div className="magazine-item-body">
+              <h3>{magazine.title}</h3>
+              <p>{magazine.description}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -199,19 +201,20 @@ const Magazine = () => {
 
   return (
     <div className="magazine-page">
-      <section className="magazine-hero" style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/magazines/magazine-hero-bg.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}>
+      <section className="magazine-hero">
         <div className="magazine-hero-content">
+          <span className="magazine-hero-eyebrow">Publications</span>
           <h1>Our Annual Magazines</h1>
-          <p>A glimpse into AASRA's yearly impact and initiatives</p>
+          <p>A glimpse into AASRA's yearly impact, stories, and community initiatives</p>
         </div>
       </section>
 
       <section className="magazine-section">
         <div className="magazine-container">
+          <div className="magazine-section-header">
+            <span className="magazine-section-eyebrow">Archive</span>
+            <h2>Browse All Editions</h2>
+          </div>
           {isMobile ? renderMagazineCarousel() : renderMagazineGrid()}
         </div>
       </section>

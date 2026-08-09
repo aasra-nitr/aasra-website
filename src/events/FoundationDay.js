@@ -5,6 +5,7 @@ import "../css/FoundationDay.scss";
 import CountUp from "react-countup";
 
 // Timeline Item Component
+// eslint-disable-next-line no-unused-vars
 const TimelineItem = ({ year, title, description }) => {
   const [showDescription, setShowDescription] = useState(false);
 
@@ -357,35 +358,29 @@ function FoundationDay() {
       <section className="founders-section">
         <div className="founders-container">
           <h2>Message from Our President</h2>
-          <div className="founder-content">
-            <div className="founder-image">
-              <img src="/images/President Jajneswar Biswal2.jpeg" alt="AASRA President" />
-            </div>
-            <div className="founder-message">
-              <blockquote>
-                "To everyone who has been a part
-                of this—whether by contributing
-                your time, ideas, or support—
-                thank you. You are what makes
-                Aasra so special.
-                As we move forward, let’s continue
-                to dream big, help each other, and
-                make a difference wherever we
-                can. Each of us has the power to
-                bring positive change, and
-                together, we are unstoppable.
-                Thank you for being an integral
-                part of our journey. I invite you to
-                explore this issue with curiosity
-                and pride, and I hope it inspires
-                you as much as it has inspired me."
-              </blockquote>
-              <div className="founder-info">
-                <h3>Jajneswar Biswal</h3>
-                <p>President, AASRA (2024-25)</p>
-                {/* <p>Professor, NIT Rourkela</p> */}
-              </div>
-            </div>
+          <div className="coming-soon-box" style={{ 
+            textAlign: 'center', 
+            padding: '4rem 2rem', 
+            background: '#faf9f6', 
+            borderRadius: '12px',
+            border: '1px dashed #009688',
+            maxWidth: '600px',
+            margin: '0 auto'
+          }}>
+            <h3 style={{ 
+              fontSize: '2.2rem', 
+              color: '#009688', 
+              fontWeight: '700', 
+              marginBottom: '1rem',
+              letterSpacing: '0.05em',
+              textTransform: 'uppercase'
+            }}>Coming Soon!</h3>
+            <p style={{ 
+              fontSize: '1.25rem', 
+              color: '#6b7280', 
+              margin: 0,
+              lineHeight: '1.6'
+            }}>The President's message is being prepared and will be shared with you shortly. Stay tuned!</p>
           </div>
         </div>
       </section>

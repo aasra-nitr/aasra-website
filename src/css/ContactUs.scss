@@ -1,70 +1,212 @@
 @import "variables";
 
+.contact-wrap {
+  /* full-width wrapper — background from Home.js wrapper div or body */
+}
+
+.contact-inner {
+  padding: 9rem 0;
+}
 
 .contact {
-  @include headingStyle($secondaryColor);
-  background-color: $primaryColor;
   height: 100%;
 
+  .section-intro {
+    margin-bottom: 4rem;
+  }
+
+  .contact_cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.6rem;
+    margin-bottom: 3rem;
+
+    .contact_card {
+      padding: 2.4rem;
+      display: grid;
+      gap: 0.8rem;
+      border-radius: 2rem;
+      transition: transform 250ms ease, box-shadow 250ms ease;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 50px rgba(31, 41, 55, 0.1);
+      }
+
+      span {
+        font-size: 1.1rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: $accentColor;
+        font-weight: 800;
+      }
+
+      strong {
+        font-size: 2rem;
+        color: $primaryColor;
+        font-weight: 700;
+      }
+
+      p {
+        margin: 0;
+        color: $greyColor;
+        font-size: 1.45rem;
+        line-height: 1.65;
+      }
+    }
+  }
+
   .contact_section {
-    @include grid;
+    display: grid;
+    gap: 2rem;
 
     .contact_content {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
       margin-bottom: 5rem;
-      width: 70%;
+      width: 100%;
 
-      .form_section {
+      .social_connect_section {
         width: 100%;
+        padding: 3rem 2.4rem;
+        display: flex;
+        flex-direction: column;
 
-        .form-group {
-          margin-right: 1.5rem;
+        h3 {
+          font-size: 2.4rem;
+          font-weight: 700;
+          color: $primaryColor;
+          margin-bottom: 1rem;
+        }
 
-          &:not(:last-child) {
-            margin-right: 1.5rem;
-            margin-bottom: 1.5rem;
+        .social_desc {
+          font-size: 1.45rem;
+          color: $greyColor;
+          line-height: 1.65;
+          margin-bottom: 3rem;
+        }
+
+        .social_grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.6rem;
+
+          @media screen and (max-width: 480px) {
+            grid-template-columns: 1fr;
           }
 
-          input,
-          textarea {
-            background-color: $secondaryColor;
-            padding: 1rem;
-            border: none;
-            height: auto;
+          .social_item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.8rem;
+            border-radius: 1.6rem;
+            background: rgba(31, 41, 55, 0.03);
+            border: 1px solid rgba(31, 41, 55, 0.05);
+            text-decoration: none;
+            transition: all 200ms ease;
 
-            &::placeholder {
-              font-size: 1.2rem;
-              color: $tertiaryColor;
-              opacity: 0.9;
-              font-weight: 400;
+            .social_icon_wrap {
+              width: 4.8rem;
+              height: 4.8rem;
+              border-radius: 1.2rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 200ms ease;
+
+              img {
+                width: 2.4rem;
+                height: 2.4rem;
+                object-fit: contain;
+              }
+
+              .email_icon {
+                font-size: 2.2rem;
+              }
+            }
+
+            .social_info {
+              display: flex;
+              flex-direction: column;
+              gap: 0.2rem;
+
+              h4 {
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: $primaryColor;
+                margin: 0;
+              }
+
+              span {
+                font-size: 1.25rem;
+                color: $greyColor;
+              }
+            }
+
+            // Hover state modifiers
+            &.instagram:hover {
+              background: rgba(225, 48, 108, 0.05);
+              border-color: rgba(225, 48, 108, 0.2);
+              transform: translateY(-2px);
+              
+              .social_icon_wrap {
+                background: #e1306c;
+                img {
+                  filter: brightness(0) invert(1);
+                }
+              }
+            }
+
+            &.facebook:hover {
+              background: rgba(24, 119, 242, 0.05);
+              border-color: rgba(24, 119, 242, 0.2);
+              transform: translateY(-2px);
+              
+              .social_icon_wrap {
+                background: #1877f2;
+                img {
+                  filter: brightness(0) invert(1);
+                }
+              }
+            }
+
+            &.youtube:hover {
+              background: rgba(255, 0, 0, 0.05);
+              border-color: rgba(255, 0, 0, 0.2);
+              transform: translateY(-2px);
+              
+              .social_icon_wrap {
+                background: #ff0000;
+                img {
+                  filter: brightness(0) invert(1);
+                }
+              }
+            }
+
+            &.email:hover {
+              background: rgba($accentColor, 0.05);
+              border-color: rgba($accentColor, 0.25);
+              transform: translateY(-2px);
+              
+              .social_icon_wrap {
+                background: $accentColor;
+                color: #fff;
+              }
             }
           }
+        }
+      }
 
-          textarea {
-            height: 110px;
-          }
+      .map {
+        min-height: 42rem;
+        overflow: hidden;
 
-          input.form-control:focus {
-            border-color: $primaryColor;
-            box-shadow: none;
-          }
-
-          .form_button {
-            width: 100%;
-            color: $primaryColor;
-            font-size: 1.5rem;
-            font-weight: 800;
-            background-color: $secondaryColor;
-            border: 1px solid $secondaryColor;
-            border-radius: 5px;
-            padding: 0.8rem;
-
-            &:hover {
-              color: $secondaryColor;
-              background-color: $primaryColor;
-            }
-          }
+        iframe {
+          width: 100%;
+          height: 100%;
+          min-height: 42rem;
         }
       }
     }
@@ -77,27 +219,29 @@
 
 @media screen and (max-width: 768px) {
   .contact {
+    .contact_cards {
+      grid-template-columns: 1fr;
+    }
+
     .contact_section {
       .contact_content {
-        display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto auto;
         row-gap: 1.5rem;
         margin-bottom: 5rem;
-        width: 90%;
+        width: 100%;
 
         .form_section {
           .form-group {
-            margin-right: 0;
-
-            &:not(:last-child) {
-              margin-right: 0;
-            }
-
             textarea.form-control {
-              height: 150px;
+              min-height: 14rem;
             }
           }
+        }
+
+        .map,
+        .map iframe {
+          min-height: 32rem;
         }
       }
     }

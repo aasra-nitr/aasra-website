@@ -1,131 +1,260 @@
 @import "variables";
+
+/* ═══════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════ */
+
 .nav_main {
   margin: 0;
-  padding: 1rem;
-  top: -3px;
-  position: sticky;
-  display: flex;
-  width: 100%;
-  border: 0;
-  outline: 0;
-  align-items: center;
-  background-color: $primaryColor;
-  color: $secondaryColor;
+  padding: 0 clamp(1.6rem, 4vw, 4rem);
+  position: fixed;          /* Fixed — always on screen as user scrolls */
   top: 0;
-  z-index: 200;
-  box-shadow: 2px 10px 20px rgba(190, 190, 190, 0.2);
+  left: 0;
+  right: 0;
+  z-index: 500;
+  height: 7rem;
+  display: flex;
+  align-items: center;
 
-  .humburger_icon {
-    visibility: hidden;
+  /* Always dark — never transparent/white over light sections */
+  background: rgba(14, 22, 38, 0.88);
+  backdrop-filter: blur(14px) saturate(1.3);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  border-bottom: 1px solid rgba(0, 150, 136, 0.08);
+
+  transition:
+    background   350ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow   350ms cubic-bezier(0.22, 1, 0.36, 1),
+    height       300ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 350ms ease;
+
+  /* Scroll progress bar */
+  .nav_progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, $accentColor 0%, $goldColor 60%, $accentColor 100%);
+    background-size: 200% 100%;
+    animation: progressShimmer 2.4s linear infinite;
+    border-radius: 0 999px 999px 0;
+    transition: width 80ms linear;
+    pointer-events: none;
+    z-index: 10;
   }
 
-  .nav_logo {
-    flex: 1;
-
-    a {
-      img {
-        width: 45px;
-        height: 30px;
-      }
-    }
+  &.nav_scrolled {
+    height: 6rem;
+    background: rgba(10, 16, 28, 0.96);
+    backdrop-filter: blur(22px) saturate(1.5);
+    -webkit-backdrop-filter: blur(22px) saturate(1.5);
+    border-bottom-color: rgba(0, 150, 136, 0.2);
+    box-shadow:
+      0 1px 0 rgba(0, 150, 136, 0.15),
+      0 8px 32px rgba(0, 0, 0, 0.4);
   }
+}
 
-  .nav_menu {
+
+@keyframes progressShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── Logo ─── */
+.nav_logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  a {
     display: flex;
-    // align-items: center;
-    margin: 0;
+    align-items: center;
+    gap: 1.1rem;
+    text-decoration: none;
+  }
 
-    li {
-      a {
-        display: flex;
-        margin: 0 1rem;
-        padding: 0.2rem 1.3rem;
-        font-size: 1.8rem;
-        cursor: pointer;
-        position: relative;
-        font-weight: 300;
-        z-index: 2;
-        color: $secondaryColor;
-        transition: color 0.5s;
-        
-        
-        &::after {
-          content: "";
-          width: 100%;
-          height: 100%;
-          border-radius: 5px;
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          outline: none;
-          border: none;
-          background-color: $secondaryColor;
-          transform: translate(-50%, -50%);
-          transition: top 0.5s, opacity 0.5s;
-          z-index: -1;
-          opacity: 0;
-        }
+  img {
+    width: 4.2rem;
+    height: auto;
+    transition: transform 300ms ease;
+    filter: drop-shadow(0 0 8px rgba(0, 150, 136, 0));
+    transition: transform 280ms ease, filter 280ms ease;
 
-        &:hover {
-          font-weight: 400;
-          color: $primaryColor;
-
-          &::after {
-            top: 50%;
-            opacity: 1;
-          }
-        }
-      }
+    &:hover {
+      transform: scale(1.06) rotate(-2deg);
+      filter: drop-shadow(0 0 10px rgba(0, 150, 136, 0.45));
     }
+  }
+
+  .nav_brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.12;
+
+    .brand_name {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      /* Gradient text */
+      background: linear-gradient(135deg, #ffffff 40%, $accentColor 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .brand_tagline {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.48);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0.48);
+    }
+  }
+}
+
+/* ─── Desktop nav links ─── */
+.nav_menu {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  gap: 0.15rem;
+  list-style: none;
+  padding: 0;
+
+  li a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.72);
+    border-radius: 999px;
+    text-decoration: none;
+    position: relative;
+    transition: color 200ms ease, background 200ms ease;
+
+    /* Underline accent */
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0.5rem;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: calc(100% - 2.6rem);
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, $accentColor, $goldColor);
+      transform-origin: center;
+      transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    &:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.07);
+
+      &::after { transform: translateX(-50%) scaleX(1); }
+    }
+
+    &.active {
+      color: #fff;
+      background: rgba(0, 150, 136, 0.12);
+
+      &::after { transform: translateX(-50%) scaleX(1); }
+    }
+  }
+}
+
+/* ─── Hamburger (mobile) ─── */
+.humburger_icon {
+  display: none;
+
+  .hamburger_button {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.6rem;
+    line-height: 0;
+    border-radius: 1rem;
+    transition: background 200ms ease, border-color 200ms ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.13);
+      border-color: rgba(0, 150, 136, 0.3);
+    }
+  }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media screen and (max-width: 900px) {
+  .nav_logo .nav_brand .brand_tagline {
+    display: none;
   }
 }
 
 @media screen and (max-width: 768px) {
   .nav_main {
-    .nav_logo {
-      a {
-        img {
-          width: 50px;
-          height: 40px;
-        }
-      }
-    }
+    height: 6.4rem;
+    background: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(16px);
 
-    .humburger_icon {
-      visibility: visible;
+    &.nav_scrolled {
+      height: 5.8rem;
     }
-    .nav_menu {
-      display: none;
-    }
-    .mobile_nav_menu {
-      position: absolute;
-      display: block;
-      list-style: none;
-      background-color: $primaryColor;
-      left: 0;
-      top: 5rem;
-      transition: all 0.5s ease-in-out;
+  }
+
+  .humburger_icon { display: flex; }
+
+  .nav_menu { display: none; }
+
+  .mobile_nav_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 1rem 1.4rem 2rem;
+    gap: 0.25rem;
+    background: rgba(10, 16, 30, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(0, 150, 136, 0.15);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+
+    li {
       width: 100%;
 
-      li {
-        width: 100%;
-        transition: all 0.5s ease;
-        text-align: center;
-        margin-bottom: 2rem;
-        font-size: 2rem;
-        
-        &:first-child {
-          margin-top: 2rem;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 1.7rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        padding: 1.1rem 1.4rem;
+        border-radius: 1rem;
+        text-decoration: none;
+        transition: color 180ms ease, background 180ms ease;
+
+        &:hover,
+        &.active {
+          color: #fff;
+          background: rgba(0, 150, 136, 0.12);
         }
 
-        a {
-          color: $secondaryColor;
-          letter-spacing: 1px ;
-          font-weight: 300;
+        &.active {
+          color: $accentColor;
         }
       }
     }
   }
 }
-
-

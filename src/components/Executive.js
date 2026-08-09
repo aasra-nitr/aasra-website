@@ -1,148 +1,63 @@
 import React from "react";
 import "../css/Executive.scss";
 
+const facultyAdvisors = [
+  { name: "Dr. A. Thirugnanam", role: "Faculty Advisor", image: "../images/facad1.jpg" },
+  { name: "Dr. Santosh Kumar Das", role: "Faculty Advisor", image: "../images/facad2.jpg" },
+  { name: "Dr. P. Balasubramanian", role: "Faculty Advisor", image: "../images/facad3.jpg" },
+];
+
+const studentBody = [
+  { name: "Sisman Nayak", role: "Treasurer", image: "../images/Sisman_Treasurer.jpg?v=1.0.3" },
+  { name: "Subhalaxmi", role: "Internal General Secretary", image: "../images/Subhalaxmi_int_gen_sec.jpg?v=1.0.3" },
+  { name: "Subhendu Sahoo", role: "External General Secretary", image: "" },
+  { name: "Anshul Kumar", role: "President", image: "../images/anshul2025.jpg" },
+  { name: "Shivang Goyal ", role: "Vice-President", image: "../images/Shivang_vicepresident.jpg?v=1.0.3" },
+  { name: "Sri Krishna", role: "Creative Head", image: "" },
+  { name: "Chinmayee", role: "Content Head", image: "../images/chinmayee_content_head.jpg?v=1.0.3" }
+];
+
+function ExecutiveCard({ name, role, image }) {
+  return (
+    <div className="exec_card">
+      <div className="exec_avatar">
+        <img src={image} alt={name} loading="lazy" />
+      </div>
+      <h3 className="exec_name">{name}</h3>
+      <p className="exec_role">{role}</p>
+    </div>
+  );
+}
+
 function Executive() {
   return (
     <section className="executives">
-      <div className="executive_head_section">
-        <h1 className="heading">Current Executives</h1>
+      <div className="executives_inner">
+        <div className="executives_intro reveal">
+          <span className="executives_eyebrow">The Team</span>
+          <h2>Current Executives</h2>
+        </div>
 
-        <div id="executiveCarousel" className="carousel slide" data-bs-ride="carousel">
-          {/* Carousel Indicators */}
-          <ol className="carousel-indicators">
-            <li data-bs-target="#executiveCarousel" data-bs-slide-to="0" className="active"></li>
-            <li data-bs-target="#executiveCarousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#executiveCarousel" data-bs-slide-to="2"></li>
-            <li data-bs-target="#executiveCarousel" data-bs-slide-to="3"></li>
-          </ol>
-
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <div className="executive_head_container">
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/facad1.jpg" alt="head Image4" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Dr. A. Thirugnanam</p>
-                    <p>Faculty Advisor</p>
-                  </div>
-                </div>
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/facad2.jpg" alt="head Image5" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Dr. Santosh Kumar Das</p>
-                    <p>Faculty Advisor</p>
-                  </div>
-                </div>
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/facad3.jpg" alt="head Image6" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Dr. P. Balasubramanian</p>
-                    <p>Faculty Advisor</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="executive_head_container three-items">
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/nimai2025.png" alt="head Image1" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Nimai</p>
-                    <p>Vice-President</p>
-                  </div>
-                </div>
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/Treasurer - Bhaskar Singh.jpg" alt="head Image2" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Bhaskar Singh</p>
-                    <p>President</p>
-                  </div>
-                </div>
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/krishna2025.jpg" alt="head Image3" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Krishnanand</p>
-                    <p>Treasurer</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="executive_head_container two-items">
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/sushmita2025.jpg" alt="head Image4" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Sushmita</p>
-                    <p>Internal General Secretary</p>
-                  </div>
-                </div>
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/anshul2025.jpg" alt="head Image5" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Anshul</p>
-                    <p>External General Secretary</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="executive_head_container">
-                {/* <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/DesignHead-Prabhu.jpg" alt="head Image4" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Prabhudutta</p>
-                    <p>Design Head</p>
-                  </div>
-                </div> */}
-                {/* <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/TechHead-Smruti.jpg" alt="head Image5" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Smruti Ranjan</p>
-                    <p>Tech Head</p>
-                  </div>
-                </div> */}
-                <div className="head_box">
-                  <div className="head_image">
-                    <img src="../images/deepak2025.jpg" alt="head Image6" />
-                  </div>
-                  <div className="executive_post_holder">
-                    <p>Deepak</p>
-                    <p>Creative Head</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* Faculty Advisors */}
+        <div className="exec_slide reveal delay-1">
+          <div className="exec_group_label">Faculty Advisors</div>
+          <div className="exec_grid">
+            {facultyAdvisors.map((person) => (
+              <ExecutiveCard key={person.name} {...person} />
+            ))}
           </div>
+        </div>
 
-          {/* Carousel Controls */}
-          <button className="carousel-control-prev" type="button" data-bs-target="#executiveCarousel" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#executiveCarousel" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
+        <div className="exec_divider" />
+
+        {/* Student Executive Body */}
+        <div className="exec_slide reveal delay-2">
+          <div className="exec_group_label">Student Executive Body</div>
+          <div className="exec_grid">
+            {studentBody.map((person) => (
+              <ExecutiveCard key={person.name} {...person} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

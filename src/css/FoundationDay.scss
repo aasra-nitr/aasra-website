@@ -5,8 +5,8 @@ $customYellowishWhite: #f8f4e9;
 
 
 .foundation-day-page {
-    font-family: Arial, sans-serif;
-    color: #333;
+    font-family: "Inter", "Poppins", -apple-system, sans-serif;
+    color: $primaryColor;
 
     // Hero Section
     .hero-section {
@@ -62,10 +62,12 @@ $customYellowishWhite: #f8f4e9;
             max-width: 800px;
 
             h1 {
-                font-size: 3.5rem;
-                font-weight: 700;
-                margin-bottom: 1rem;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                font-size: clamp(3.2rem, 6vw, 6.4rem);
+                font-weight: 800;
+                margin-bottom: 1.4rem;
+                letter-spacing: -0.03em;
+                line-height: 1.06;
+                text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
             }
 
             p {
@@ -75,18 +77,22 @@ $customYellowishWhite: #f8f4e9;
             }
 
             .cta-button {
-                display: inline-block;
-                padding: 1rem 2rem;
-                background: $primaryColor;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.7rem;
+                padding: 1.3rem 2.8rem;
+                background: linear-gradient(135deg, $accentColor, darken($accentColor, 8%));
                 color: white;
                 text-decoration: none;
-                border-radius: 5px;
-                font-weight: 600;
-                transition: all 0.3s ease;
+                border-radius: 999px;
+                font-size: 1.5rem;
+                font-weight: 700;
+                box-shadow: 0 8px 28px rgba(0, 150, 136, 0.35);
+                transition: transform 220ms ease, box-shadow 220ms ease;
 
                 &:hover {
-                    background: darken($primaryColor, 10%);
-                    transform: translateY(-2px);
+                    transform: translateY(-3px);
+                    box-shadow: 0 16px 40px rgba(0, 150, 136, 0.5);
                 }
             }
         }
@@ -103,14 +109,17 @@ $customYellowishWhite: #f8f4e9;
             text-align: center;
 
             h2 {
-                font-size: 2.5rem;
+                font-size: clamp(2.6rem, 3.5vw, 4rem);
+                font-weight: 800;
+                letter-spacing: -0.03em;
                 margin-bottom: 2rem;
                 color: $primaryColor;
             }
 
             p {
-                font-size: 1.2rem;
-                line-height: 1.8;
+                font-size: 1.65rem;
+                line-height: 1.82;
+                color: #374151;
                 max-width: 800px;
                 margin: 0 auto;
             }

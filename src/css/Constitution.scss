@@ -1,7 +1,175 @@
 
 
-@import "variables"; 
+@import "variables";
 
-.constitution  {
-    @include headingStyle($primaryColor);
+.constitution-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  background: radial-gradient(circle at 50% 50%, lighten($primaryColor, 3%) 0%, $primaryColor 100%);
+  overflow: hidden;
+  font-family: 'Outfit', 'Inter', -apple-system, sans-serif;
+  color: $secondaryColor;
+
+  .constitution-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba($accentColor, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($accentColor, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+    mask-image: radial-gradient(circle, black 30%, transparent 80%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .constitution-card {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 640px;
+    padding: 4.5rem 3.5rem;
+    border-radius: var(--radius-xl);
+    background: rgba(31, 41, 55, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: cardEntrance var(--transition-slow) forwards;
+
+    @media (max-width: 576px) {
+      padding: 3rem 2rem;
+      border-radius: var(--radius-lg);
+    }
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.6rem 1.6rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border-radius: var(--radius-pill);
+    background: rgba($goldColor, 0.15);
+    border: 1px solid rgba($goldColor, 0.35);
+    color: lighten($goldColor, 10%);
+    box-shadow: 0 4px 12px rgba($goldColor, 0.15);
+    margin-bottom: 2rem;
+    animation: pulse-gold-badge 2s ease-in-out infinite;
+  }
+
+  .constitution-title {
+    font-size: clamp(2.4rem, 4.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 1.8rem;
+    letter-spacing: -0.02em;
+
+    .gradient-text {
+      background: linear-gradient(135deg, lighten($accentColor, 15%), $accentColor);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .constitution-desc {
+    font-size: 1.55rem;
+    line-height: 1.65;
+    color: rgba($secondaryColor, 0.8);
+    margin-bottom: 3rem;
+  }
+
+  .info-box {
+    background: rgba($accentColor, 0.08);
+    border-left: 4px solid $accentColor;
+    padding: 2rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    margin-bottom: 3.5rem;
+    width: 100%;
+    text-align: left;
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: lighten($accentColor, 15%);
+      margin: 0 0 0.8rem;
+    }
+
+    p {
+      font-size: 1.45rem;
+      line-height: 1.6;
+      color: rgba($secondaryColor, 0.9);
+      margin: 0;
+    }
+  }
+
+  .actions {
+    width: 100%;
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 1.4rem 2.8rem;
+      border-radius: var(--radius-pill);
+      font-size: 1.45rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      border: none;
+      outline: none;
+
+      &.btn-primary {
+        background: linear-gradient(135deg, $accentColor, darken($accentColor, 8%));
+        color: #fff;
+        box-shadow: 0 10px 25px rgba($accentColor, 0.25);
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 15px 35px rgba($accentColor, 0.35);
+          filter: brightness(1.1);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse-gold-badge {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba($goldColor, 0.15);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 4px 20px rgba($goldColor, 0.35);
+  }
 }
